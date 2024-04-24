@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 267183292}
   - component: {fileID: 267183291}
   - component: {fileID: 267183290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 784413639}
   - component: {fileID: 784413638}
   - component: {fileID: 784413637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 1299275699}
   - component: {fileID: 1299275698}
   - component: {fileID: 1299275697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,9 +1170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _RotateSpeed: 1
   _MoveSpeed: 10
-  _forceJump: 15
+  _forceJump: 8
   _checkGround: {fileID: 2093998502}
-  _isGrounded: 0
 --- !u!212 &1568743960
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1279,7 +1278,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 40
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

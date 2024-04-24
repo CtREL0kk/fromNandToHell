@@ -15,7 +15,8 @@ public class Keyboard : MonoBehaviour
     SpriteRenderer sr;
     Animator an;
     BoxCollider2D cl;
-    public bool _isGrounded = false;
+    private bool _isGrounded => 
+        Physics2D.OverlapArea(_checkGround.bounds.min, _checkGround.bounds.max, LayerMask.GetMask("Ground"));
 
     private void Start()
     {
@@ -32,8 +33,6 @@ public class Keyboard : MonoBehaviour
 
     private void HorizontalMove()
     {
-       // var direction = Input.GetAxis("Horizontal");
-       // sr.flipX = direction < 0 ? true : false;
 
         var value = _MoveSpeed * Time.deltaTime;
         transform.Translate(value * Vector3.right);
@@ -44,31 +43,14 @@ public class Keyboard : MonoBehaviour
     private void VerticalMove()
     {
         var direction = Input.GetAxis("Vertical");
+        Debug.Log(_isGrounded);
         if (direction > 0 && _isGrounded)
         {
             rb.AddForce(Vector3.up * _forceJump, ForceMode2D.Impulse);
            // an.SetBool("Jumping", true);
-            _isGrounded = false;
         }
        // else
          //   an.SetBool("Jumping", false);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        _isGrounded = true;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        _isGrounded = true;
-    }
-    /*
-    private bool IsGrounded()
-    {
-        var listOfColliders = Physics2D.OverlapBoxAll(_checkGround.transform.position, _checkGround.size, 0);
-
-        return listOfColliders.Length > 2;
-    }
-    */
+    
 }
