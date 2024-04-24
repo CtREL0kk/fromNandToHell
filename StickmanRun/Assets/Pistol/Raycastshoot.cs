@@ -1,55 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Raycastshoot : MonoBehaviour
 {
     [SerializeField] private GameObject _impactEffect;
     [SerializeField] private int _damage = 40;
     [SerializeField] private Transform _spavnPoint;
-    [SerializeField] private float _delayBtwShoots;
     [SerializeField] private LineRenderer _lineRenderer;
-    private float _localDelayBtwShoots;
+    [SerializeField] private LayerMask _damageableLayers;
 
     void Update()
     {
         RotateGun();
         
-        if (Input.GetMouseButton(0))
-            StartCoroutine(Raycast());
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(Raycast(_lineRenderer, _spavnPoint, _damage, _spavnPoint.right, _damageableLayers));
+        }      
     }
 
     private void RotateGun()
     {
         var mouseCoordinates = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        var coefficent = Mathf.Atan2(mouseCoordinates.y, mouseCoordinates.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, coefficent);
+        var angle = Mathf.Atan2(mouseCoordinates.y, mouseCoordinates.x) * Mathf.Rad2Deg;
+        
+        if (angle >= -90f && angle <= 90f)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
-    IEnumerator Raycast()
+
+    public static IEnumerator Raycast(LineRenderer lineRenderer, Transform spavnPoint, int damage, Vector3 direction, LayerMask damageableLayers)
     {
-        
-        var hitInfo = Physics2D.Raycast(_spavnPoint.position, _spavnPoint.right);
+        var hitInfo = Physics2D.Raycast(spavnPoint.position, direction, Mathf.Infinity, damageableLayers);
         if (hitInfo)
         {
-            var enemy = hitInfo.transform.GetComponent<Enemy>();
-            if (enemy != null)
+            var damageableObject = hitInfo.transform.GetComponent<IDamageable>();
+            if (damageableObject != null)
             {
-                enemy.TakeDamage(_damage);
+                damageableObject.TakeDamage(damage);
             }
 
-            //Instantiate(_impactEffect, hitInfo.point, Quaternion.identity);
-            _lineRenderer.SetPosition(0, _spavnPoint.position);
-            _lineRenderer.SetPosition(1, hitInfo.point);
+            //Instantiate(_impactEffect, hitInfo.point, Quaternion.identity) пригодится для импакта от стрельбы;
+            lineRenderer.SetPosition(0, spavnPoint.position);
+            lineRenderer.SetPosition(1, hitInfo.point);
         }
-        else 
+        else
         {
-            _lineRenderer.SetPosition(0, _spavnPoint.position);
-            _lineRenderer.SetPosition(1, _spavnPoint.position + _spavnPoint.right * 100);
+            lineRenderer.SetPosition(0, spavnPoint.position);
+            lineRenderer.SetPosition(1, spavnPoint.position + direction * 100);
         }
-    
-        _lineRenderer.enabled = true;
+
+        lineRenderer.enabled = true;
         yield return new WaitForSeconds(0.02f);
-        _lineRenderer.enabled = false;
+        lineRenderer.enabled = false;
     }
 }
