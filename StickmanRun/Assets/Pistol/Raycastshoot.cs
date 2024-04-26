@@ -28,8 +28,8 @@ public class Raycastshoot : MonoBehaviour
         
         if (angle >= -90f && angle <= 90f)
         {
-            transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
+            transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * 10);
+        }    
     }
 
 
@@ -44,7 +44,7 @@ public class Raycastshoot : MonoBehaviour
                 damageableObject.TakeDamage(damage);
             }
 
-            //Instantiate(_impactEffect, hitInfo.point, Quaternion.identity) пригодится для импакта от стрельбы;
+            //Instantiate(_impactEffect, hitInfo.point, Quaternion.identity) пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ;
             lineRenderer.SetPosition(0, spavnPoint.position);
             lineRenderer.SetPosition(1, hitInfo.point);
         }
