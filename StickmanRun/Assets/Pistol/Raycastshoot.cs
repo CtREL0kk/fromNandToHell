@@ -22,8 +22,8 @@ public class Raycastshoot : MonoBehaviour
     private void RotateGun()
     {
         var mouseCoordinates = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        var coefficent = Mathf.Atan2(mouseCoordinates.y, mouseCoordinates.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, coefficent);
+        var targetRotation = Mathf.Atan2(mouseCoordinates.y, mouseCoordinates.x) * Mathf.Rad2Deg;
+        transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, Quaternion.Euler(0, 0, targetRotation), Time.deltaTime * 10);
     }
 
     IEnumerator Raycast()
@@ -49,7 +49,7 @@ public class Raycastshoot : MonoBehaviour
         }
     
         _lineRenderer.enabled = true;
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.1f);
         _lineRenderer.enabled = false;
     }
 }
