@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JustRunBaby : MonoBehaviour
+public class Keyboard : MonoBehaviour
 {
+
+    [SerializeField] private float _RotateSpeed;
     [SerializeField] private float _MoveSpeed;
     [SerializeField] private float _forceJump;
     [SerializeField] private BoxCollider2D _checkGround;
@@ -41,7 +43,7 @@ public class JustRunBaby : MonoBehaviour
     private void VerticalMove()
     {
         var direction = Input.GetAxis("Vertical");
-        //Debug.Log(_isGrounded);
+        Debug.Log(_isGrounded);
         if (direction > 0 && _isGrounded)
         {
             rb.AddForce(Vector3.up * _forceJump, ForceMode2D.Impulse);
