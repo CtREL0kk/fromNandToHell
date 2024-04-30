@@ -2019,7 +2019,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 238966147}
   _damageableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!212 &1193804303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2905,7 +2905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 288523910792270138, guid: a36901c9249a32043a2c5004179ac52a, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1953459896629906324, guid: a36901c9249a32043a2c5004179ac52a, type: 3}
       propertyPath: m_Name
@@ -2913,7 +2913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1953459896629906324, guid: a36901c9249a32043a2c5004179ac52a, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3450717118237315417, guid: a36901c9249a32043a2c5004179ac52a, type: 3}
       propertyPath: m_LocalPosition.x
