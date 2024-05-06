@@ -2538,10 +2538,10 @@ MonoBehaviour:
   _impactEffect: {fileID: 0}
   _damage: 50
   _spavnPoint: {fileID: 518193951}
-  _lineRenderer: {fileID: 0}
+  _lineRenderer: {fileID: 238966147}
   _damageableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!212 &1426535410
 SpriteRenderer:
   m_ObjectHideFlags: 0
