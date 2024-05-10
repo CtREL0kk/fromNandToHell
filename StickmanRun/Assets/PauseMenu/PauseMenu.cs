@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     private bool isOnPause;
     public GameObject pauseMenu;
 
-    private void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
