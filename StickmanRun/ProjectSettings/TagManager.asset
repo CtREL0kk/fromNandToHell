@@ -54,3 +54,6 @@ TagManager:
   - name: Enimies
     uniqueID: 127204671
     locked: 0
+  - name: Pause Menu
+    uniqueID: 2190489733
+    locked: 0
