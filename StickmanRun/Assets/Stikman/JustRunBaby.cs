@@ -29,6 +29,8 @@ public class Keyboard : MonoBehaviour
     {
         HorizontalMove();
         VerticalMove();
+        if (Input.GetKeyDown(KeyCode.S) && _isGrounded) an.SetTrigger("Tackle");
+        else an.ResetTrigger("Tackle");
     }
 
     private void HorizontalMove()
@@ -36,21 +38,18 @@ public class Keyboard : MonoBehaviour
 
         var value = _MoveSpeed * Time.deltaTime;
         transform.Translate(value * Vector3.right);
-
-        //an.SetFloat("Horizontal Move", Mathf.Abs(direction));
     }
 
     private void VerticalMove()
     {
         var direction = Input.GetAxis("Vertical");
-        Debug.Log(_isGrounded);
-        if (direction > 0 && _isGrounded)
+        if (direction > 0 && _isGrounded && !an.GetCurrentAnimatorStateInfo(0).IsName("Tackle"))
         {
             rb.AddForce(Vector3.up * _forceJump, ForceMode2D.Impulse);
-           // an.SetBool("Jumping", true);
+            an.SetTrigger("Jump");
         }
-       // else
-         //   an.SetBool("Jumping", false);
+        else
+            an.ResetTrigger("Jump");
     }
     
 }
