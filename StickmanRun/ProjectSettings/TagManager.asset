@@ -15,7 +15,11 @@ TagManager:
   - Player
   - Enemy
   - Ground
+<<<<<<< HEAD
   - Foreground
+=======
+  - Post Processing
+>>>>>>> origin/JustToSave
   - 
   - 
   - 
@@ -50,6 +54,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2443480463
+    locked: 0
+  - name: BsInFrontOfPlayer
+    uniqueID: 3618655019
     locked: 0
   - name: Enimies
     uniqueID: 127204671
