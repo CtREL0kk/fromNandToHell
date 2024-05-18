@@ -12,14 +12,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - Enemy
   - Ground
-<<<<<<< HEAD
-  - Foreground
-=======
-  - Post Processing
->>>>>>> origin/JustToSave
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -43,24 +39,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 469119357
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Buildings
-    uniqueID: 3387005749
-    locked: 0
-  - name: Player
-    uniqueID: 2443480463
-    locked: 0
-  - name: BsInFrontOfPlayer
-    uniqueID: 3618655019
-    locked: 0
-  - name: Enimies
-    uniqueID: 127204671
-    locked: 0
-  - name: Pause Menu
-    uniqueID: 2190489733
     locked: 0
