@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemysWeapon : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private GameObject trigerZone;
+    [SerializeField] private CircleCollider2D trigerZone;
     [SerializeField] private int damage;
     [SerializeField] bool lazer;
     [SerializeField] private LineRenderer lineRenderer;
@@ -15,7 +15,7 @@ public class EnemysWeapon : MonoBehaviour
     [SerializeField] private float angleOfShootDirectionInDeg;
 
     private float start_time = 0f;
-    public bool isPlayerInside => CheckPlayer();
+    public bool isPlayerInside => CheckPlayer(trigerZone);
     private Vector3 directionOfShoot => spavnPoint.transform.right.Rotate(angleOfShootDirectionInDeg);
 
     void Start()
@@ -45,17 +45,11 @@ public class EnemysWeapon : MonoBehaviour
         }       
     }
 
-    
-    private bool CheckPlayer()
-    {
-        var circleCollider = trigerZone.GetComponent<CircleCollider2D>();
-        if (circleCollider == null)
-        {
-            Debug.LogWarning("CircleCollider2D не найден на объекте trigerZone.");
-            return false;
-        }
 
-        var collidersInArea = Physics2D.OverlapCircleAll(trigerZone.transform.position, circleCollider.radius * trigerZone.transform.localScale.x / 10f);   //формула которую я подбирал час
+    public static bool CheckPlayer(CircleCollider2D trigerZone)
+    {
+       
+        var collidersInArea = Physics2D.OverlapCircleAll(trigerZone.transform.position, trigerZone.radius * trigerZone.transform.localScale.x / 100f);   //формула которую я подбирал час
         foreach (var collider in collidersInArea)
         {
             if (collider.CompareTag("Player"))
@@ -64,7 +58,7 @@ public class EnemysWeapon : MonoBehaviour
                 return true;
             }
         }
-        
+
         return false;
     }
 }
