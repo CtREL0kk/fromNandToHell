@@ -30,8 +30,6 @@ public class Keyboard : MonoBehaviour
         if (isDead) return;      
         HorizontalMove();
         VerticalMove();
-        if (Input.GetKeyDown(KeyCode.S) && _isGrounded) an.SetTrigger("Tackle");
-        else an.ResetTrigger("Tackle");
     }
 
     private void HorizontalMove()
@@ -42,6 +40,23 @@ public class Keyboard : MonoBehaviour
 
     private void VerticalMove()
     {
+        Jump();
+        Tackle();
+    }
+
+    private void Tackle()
+    {
+        if (Input.GetKeyDown(KeyCode.S) && _isGrounded) an.SetTrigger("Tackle");
+        else an.ResetTrigger("Tackle");
+    }
+    
+    private void Jump()
+    {
+        if (!_isGrounded && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
+        {
+            rb.AddForce(-Vector3.up * forceJump);
+        }
+
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _isGrounded && !an.GetCurrentAnimatorStateInfo(0).IsName("Tackle"))
         {
             rb.AddForce(Vector3.up * forceJump, ForceMode2D.Impulse);
@@ -49,7 +64,6 @@ public class Keyboard : MonoBehaviour
         }
         else
             an.ResetTrigger("Jump");
-       
     }
 
     [SerializeField] private Transform checkWallPoint;
@@ -93,7 +107,7 @@ public class Keyboard : MonoBehaviour
         if (whiteSquareInstance == null)
         {
             whiteSquareInstance = Instantiate(whiteSquare, checkWallPoint.transform.position, Quaternion.identity);
-            whiteSquareInstance.transform.position = whiteSquareInstance.transform.position + new Vector3(0, 0, -2); //�� �������� ����
+            whiteSquareInstance.transform.position = whiteSquareInstance.transform.position + new Vector3(0, 0, -2);
             moveSpeed = 0;
             StartShakeCamera();
             StartCoroutine(FadeOutCoroutine());
@@ -136,7 +150,7 @@ public class Keyboard : MonoBehaviour
         {
             saveWallHeight = boxCollider.bounds.size.y;
             moveSpeed = 0;
-            DisableHead();//����� ������� ��������� �� ���������
+            DisableHead();
         }
     }
     
@@ -146,7 +160,7 @@ public class Keyboard : MonoBehaviour
         for (var i = 0; i < transform.childCount; i++)
         {
             var child = transform.GetChild(i);
-            if (child != null && child.name == "������")
+            if (child != null && child.name == "Scull")
             {
                 child.GetComponent<CircleCollider2D>().enabled = false;
             }
