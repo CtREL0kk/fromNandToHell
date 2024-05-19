@@ -278,8 +278,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1632052731
+  m_SortingLayer: 2
   m_SortingOrder: 150
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -498,7 +498,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 426748794}
-  - {fileID: 1732361987}
   - {fileID: 1154612551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -512,7 +511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91433497}
   - component: {fileID: 91433498}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: White handrails 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1661,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 38764634}
   _damageableLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
 --- !u!212 &638731516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1701,8 +1700,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1851486833
-  m_SortingLayer: 0
+  m_SortingLayerID: 1632052731
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 68531c7c51c3d4d419c8943c80c73a29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1810,7 +1809,7 @@ GameObject:
   - component: {fileID: 727653550}
   - component: {fileID: 727653551}
   - component: {fileID: 727653552}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: White balcony 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2244,12 +2243,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878922799}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150.56, y: -8.26, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 118.006325, y: -31.585049, z: -1.312039}
   m_LocalScale: {x: 0.8414, y: 0.8414, z: 0.8414}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1154612551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917817116
 GameObject:
@@ -2714,6 +2713,7 @@ Transform:
   - {fileID: 1873330664}
   - {fileID: 1866286571}
   - {fileID: 727653550}
+  - {fileID: 878922801}
   m_Father: {fileID: 65605214}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179896340
@@ -3107,6 +3107,8 @@ Transform:
   - {fileID: 1671364669}
   - {fileID: 553755244}
   - {fileID: 29448011}
+  - {fileID: 1732361987}
+  - {fileID: 1651821144}
   m_Father: {fileID: 426748794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1388301463
@@ -3303,7 +3305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1464538198}
   - component: {fileID: 1464538199}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: White handrails 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3427,7 +3429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: ae3d17c1c8b226f4ca4617a32b4c790d, type: 3}
       propertyPath: m_Name
-      value: Stickman (1)
+      value: Stickman
       objectReference: {fileID: 0}
     - target: {fileID: -8539391282093427543, guid: ae3d17c1c8b226f4ca4617a32b4c790d, type: 3}
       propertyPath: m_Name
@@ -4627,8 +4629,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -907961547
-  m_SortingLayer: 0
+  m_SortingLayerID: -1480219783
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9eec11e546f65f44d8a503e5ca76a795, type: 3}
   m_Color: {r: 0.7584905, g: 0.7584905, b: 0.7584905, a: 1}
@@ -4649,12 +4651,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651821142}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 125.8, y: -16, z: 0}
-  m_LocalScale: {x: 0.3415, y: 0.3415, z: 0.3415}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 43.28, y: -5.89, z: 0}
+  m_LocalScale: {x: 0.17089237, y: 0.1803769, z: 0.1803769}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1388301462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1671364668
 GameObject:
@@ -4766,11 +4768,11 @@ Transform:
   m_GameObject: {fileID: 1732361986}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.84, y: -10.8, z: -1.312039}
-  m_LocalScale: {x: 0.31426877, y: 0.31426877, z: 0.31426877}
+  m_LocalPosition: {x: -9.521094, y: 2.1471179, z: 0}
+  m_LocalScale: {x: 0.1572654, y: 0.16599363, z: 0.16599363}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 65605214}
+  m_Father: {fileID: 1388301462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1732361988
 SpriteRenderer:
@@ -5003,7 +5005,7 @@ GameObject:
   - component: {fileID: 1866286571}
   - component: {fileID: 1866286573}
   - component: {fileID: 1866286572}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5692,7 +5694,7 @@ Rigidbody2D:
   m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -5716,8 +5718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ceff9272e52ea44a3cb6113a67698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  forceJump: 40
+  moveSpeed: 25
+  forceJump: 120
   checkGround: {fileID: 1615353062}
   checkWallPoint: {fileID: 1355683806}
   distanceToDeathFromPlatform: 30
@@ -5861,6 +5863,4 @@ SceneRoots:
   - {fileID: 1916512994}
   - {fileID: 1867517372}
   - {fileID: 65605214}
-  - {fileID: 1651821144}
-  - {fileID: 878922801}
   - {fileID: 1522041206}
