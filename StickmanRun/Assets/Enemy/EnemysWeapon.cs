@@ -49,7 +49,7 @@ public class EnemysWeapon : MonoBehaviour
     public static bool CheckPlayer(CircleCollider2D trigerZone)
     {
        
-        var collidersInArea = Physics2D.OverlapCircleAll(trigerZone.transform.position, trigerZone.radius * trigerZone.transform.localScale.x / 100f);   //формула которую я подбирал час
+        var collidersInArea = Physics2D.OverlapCircleAll(trigerZone.transform.position, trigerZone.radius * trigerZone.transform.localScale.x / 10f);   //формула которую я подбирал час
         foreach (var collider in collidersInArea)
         {
             if (collider.CompareTag("Player"))

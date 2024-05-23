@@ -14,9 +14,9 @@ public class Helth : MonoBehaviour, IDamageable
         if (hp < 0)
         {
             playerCamera.transform.parent = null;
-            DisableHead();
+            //DisableHead();
             gameObject.SetActive(false);
-            SceneManager.LoadScene("End scene");
+            //SceneManager.LoadScene("End scene");
         }
     }
 
