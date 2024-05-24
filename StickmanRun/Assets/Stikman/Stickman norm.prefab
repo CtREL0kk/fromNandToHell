@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 4480966313430562120}
   - component: {fileID: 2165986916878017869}
   m_Layer: 8
-  m_Name: Stickman norm 2
+  m_Name: Stickman norm
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
