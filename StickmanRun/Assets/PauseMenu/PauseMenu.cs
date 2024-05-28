@@ -29,6 +29,12 @@ namespace PauseMenu
             isOnPause = false;
         }
 
+        public void Restart()
+        {
+            SceneManager.LoadScene("Game");
+            Time.timeScale = 1f;
+        }
+        
         private void Pause()
         {
             volume.enabled = false;
