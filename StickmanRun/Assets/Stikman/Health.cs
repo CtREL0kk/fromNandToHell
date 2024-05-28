@@ -1,17 +1,21 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Serialization;
 
 public class Helth : MonoBehaviour, IDamageable
 {
     [SerializeField] int hp = 100;
     [SerializeField] Camera playerCamera;
-    [SerializeField] GameObject DeathWindow;
-
+    [SerializeField] private GameObject deathWindow;
+    [SerializeField] private PostProcessVolume volume;
+    
     public void TakeDamage(int damage)
     {
         hp -= damage;
         if (hp < 0)
         {
-            DeathWindow.SetActive(true);
+            volume.enabled = false;
+            deathWindow.SetActive(true);
             playerCamera.transform.parent = null;
             //DisableHead();
             gameObject.SetActive(false);

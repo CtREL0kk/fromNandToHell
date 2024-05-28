@@ -1,48 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+namespace PauseMenu
 {
-    private bool isOnPause;
-    public GameObject pauseMenu;
-    public GameObject pauseWindow;
-
-    public void Update()
+    public class PauseMenu : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        private bool isOnPause;
+        [SerializeField] private PostProcessVolume volume;
+        [SerializeField] private GameObject pauseMenu;
+        [SerializeField] private GameObject pauseWindow;
+
+        public void Update()
         {
+            if (!Input.GetKeyDown(KeyCode.Escape)) return;
             if (isOnPause)
-            {
                 Resume();
-            }
             else
-            {
                 Pause();
-            }
         }
-    }
 
-    public void Resume()
-    {
-        pauseWindow.SetActive(false);
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isOnPause = false;
-    }
+        public void Resume()
+        {
+            volume.enabled = true;
+            pauseWindow.SetActive(false);
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+            isOnPause = false;
+        }
 
-    public void Pause()
-    {
-        pauseWindow.SetActive(true);
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isOnPause = true;
-    }
+        private void Pause()
+        {
+            volume.enabled = false;
+            pauseWindow.SetActive(true);
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            isOnPause = true;
+        }
 
-    public void BackToMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Start Menu");
+        public void BackToMenu()
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Start Menu");
+        }
     }
 }
