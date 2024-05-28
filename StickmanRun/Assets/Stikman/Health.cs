@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Helth : MonoBehaviour, IDamageable
 {
     [SerializeField] int hp = 100;
     [SerializeField] Camera playerCamera;
+    [SerializeField] GameObject DeathWindow;
 
     public void TakeDamage(int damage)
     {
         hp -= damage;
         if (hp < 0)
         {
+            DeathWindow.SetActive(true);
             playerCamera.transform.parent = null;
             //DisableHead();
             gameObject.SetActive(false);
-            //SceneManager.LoadScene("End scene");
         }
     }
 
@@ -25,20 +23,10 @@ public class Helth : MonoBehaviour, IDamageable
         for (var i = 0; i < transform.childCount; i++) 
         {
             var child = transform.GetChild(i);
-            if (child != null && child.name == "Голова")
+            if (child != null && child.name == "пїЅпїЅпїЅпїЅпїЅпїЅ")
             {
                 child.GetComponent<CircleCollider2D>().enabled = false;
             }
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 }
