@@ -10,10 +10,12 @@ namespace PauseMenu
         [SerializeField] private PostProcessVolume volume;
         [SerializeField] private GameObject pauseMenu;
         [SerializeField] private GameObject pauseWindow;
+        [SerializeField] private GameObject deathMenu;
+        [SerializeField] private GameObject settingsWindow;
 
         public void Update()
         {
-            if (!Input.GetKeyDown(KeyCode.Escape)) return;
+            if (!Input.GetKeyDown(KeyCode.Escape) || deathMenu.activeSelf || settingsWindow.activeSelf) return;
             if (isOnPause)
                 Resume();
             else
