@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 522620865}
   - component: {fileID: 522620864}
   m_Layer: 0
-  m_Name: Music
+  m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2757,9 +2757,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 980938976}
     - target: {fileID: 2165986916878017869, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 522620864}
+    - target: {fileID: 2165986916878017869, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
       propertyPath: deathWindow
       value: 
       objectReference: {fileID: 980938976}
+    - target: {fileID: 2462121594306712512, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 57494693e474d47b694fed27b3159728, type: 3}
+    - target: {fileID: 2462121594306712512, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 34bab8677f14a45c289f05732ab2ff49, type: 3}
+    - target: {fileID: 2462121594306712512, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 522620864}
+    - target: {fileID: 2462121594306712512, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: tackleSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b9fd62717a5a547a894f33a2348a6951, type: 3}
     - target: {fileID: 2858802988151749502, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
       propertyPath: _lineRenderer
       value: 
@@ -4957,6 +4977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6c98867cb9dd74da6183eb10e78e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 522620864}
   volume: {fileID: 1467907506}
   pauseMenu: {fileID: 1874244747}
   pauseWindow: {fileID: 450515982}
