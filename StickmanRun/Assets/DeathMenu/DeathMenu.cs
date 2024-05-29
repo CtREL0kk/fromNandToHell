@@ -1,8 +1,8 @@
+using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 
-namespace DeathWindow
+namespace DeathMenu
 {
     public class DeathWindow : MonoBehaviour
     {

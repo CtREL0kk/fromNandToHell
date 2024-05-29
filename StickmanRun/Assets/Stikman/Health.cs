@@ -8,12 +8,14 @@ public class Helth : MonoBehaviour, IDamageable
     [SerializeField] Camera playerCamera;
     [SerializeField] private GameObject deathWindow;
     [SerializeField] private PostProcessVolume volume;
+    [SerializeField] private AudioSource audioSource;
     
     public void TakeDamage(int damage)
     {
         hp -= damage;
         if (hp < 0)
         {
+            audioSource.Pause();
             volume.enabled = false;
             deathWindow.SetActive(true);
             playerCamera.transform.parent = null;
