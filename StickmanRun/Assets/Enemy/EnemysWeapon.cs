@@ -54,7 +54,7 @@ public class EnemysWeapon : MonoBehaviour
         {
             if (collider.CompareTag("Player"))
             {
-                Debug.Log("Игрок внутри");
+                //Debug.Log("Игрок внутри");
                 return true;
             }
         }
