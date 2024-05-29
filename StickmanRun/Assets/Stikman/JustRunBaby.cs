@@ -13,7 +13,9 @@ public class Keyboard : MonoBehaviour
     [SerializeField] private AudioClip tackleSound;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioSource audioSource;
-
+    [SerializeField] private GameObject pauseWindow;
+    [SerializeField] private GameObject settingsWindow;
+    
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator an;
@@ -31,7 +33,7 @@ public class Keyboard : MonoBehaviour
 
     private void Update()
     {
-        if (isDead) return;      
+        if (isDead || pauseWindow.activeSelf || settingsWindow.activeSelf) return;
         HorizontalMove();
         VerticalMove();
     }
