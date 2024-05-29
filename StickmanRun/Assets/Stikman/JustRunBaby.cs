@@ -11,6 +11,7 @@ public class Keyboard : MonoBehaviour
     [SerializeField] private BoxCollider2D checkGround;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip tackleSound;
+    [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioSource audioSource;
 
     private Rigidbody2D rb;
@@ -114,6 +115,7 @@ public class Keyboard : MonoBehaviour
     {
         if (whiteSquareInstance == null)
         {
+            audioSource.PlayOneShot(deathSound);
             whiteSquareInstance = Instantiate(whiteSquare, checkWallPoint.transform.position, Quaternion.identity);
             whiteSquareInstance.transform.position = whiteSquareInstance.transform.position + new Vector3(0, 0, -2);
             moveSpeed = 0;
@@ -155,7 +157,8 @@ public class Keyboard : MonoBehaviour
     {
         var boxCollider = wallHit.collider.GetComponent<BoxCollider2D>();
         if (boxCollider != null && transform.position.y < boxCollider.bounds.size.y)
-        {
+        {   
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             saveWallHeight = boxCollider.bounds.size.y;
             moveSpeed = 0;
             DisableHead();
