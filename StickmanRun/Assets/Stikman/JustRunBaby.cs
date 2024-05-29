@@ -9,6 +9,8 @@ public class Keyboard : MonoBehaviour
     [SerializeField] private float moveSpeed = 10;
     [SerializeField] private float forceJump = 40;
     [SerializeField] private BoxCollider2D checkGround;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioSource audioSource;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -61,6 +63,7 @@ public class Keyboard : MonoBehaviour
         {
             rb.AddForce(Vector3.up * forceJump, ForceMode2D.Impulse);
             an.SetTrigger("Jump");
+            audioSource.PlayOneShot(jumpSound);
         }
         else
             an.ResetTrigger("Jump");
