@@ -10,6 +10,7 @@ public class Keyboard : MonoBehaviour
     [SerializeField] private float forceJump = 40;
     [SerializeField] private BoxCollider2D checkGround;
     [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip tackleSound;
     [SerializeField] private AudioSource audioSource;
 
     private Rigidbody2D rb;
@@ -48,7 +49,11 @@ public class Keyboard : MonoBehaviour
 
     private void Tackle()
     {
-        if (Input.GetKeyDown(KeyCode.S) && _isGrounded) an.SetTrigger("Tackle");
+        if (Input.GetKeyDown(KeyCode.S) && _isGrounded)
+        {
+            audioSource.PlayOneShot(tackleSound);
+            an.SetTrigger("Tackle");
+        }
         else an.ResetTrigger("Tackle");
     }
     
