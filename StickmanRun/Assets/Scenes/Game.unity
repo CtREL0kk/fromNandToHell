@@ -2842,9 +2842,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 522620864}
     - target: {fileID: 2858802988151749502, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: pauseWindow
+      value: 
+      objectReference: {fileID: 450515982}
+    - target: {fileID: 2858802988151749502, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
       propertyPath: _lineRenderer
       value: 
       objectReference: {fileID: 238966147}
+    - target: {fileID: 2858802988151749502, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: settingsWindow
+      value: 
+      objectReference: {fileID: 1003824729}
     - target: {fileID: 3066480594379107166, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
       propertyPath: m_RenderingPath
       value: -1

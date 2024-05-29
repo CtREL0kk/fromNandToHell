@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 public class Raycastshoot : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseWindow;
+    [SerializeField] private GameObject settingsWindow;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip shootSound;
     [SerializeField] private GameObject _impactEffect;
@@ -15,6 +16,7 @@ public class Raycastshoot : MonoBehaviour
 
     void Update()
     {
+        if (pauseWindow.activeSelf || settingsWindow.activeSelf) return;
         RotateGun();
         
         if (Input.GetMouseButtonDown(0))
