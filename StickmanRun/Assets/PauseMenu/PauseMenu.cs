@@ -8,15 +8,18 @@ namespace PauseMenu
     {
         private bool isOnPause;
         [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioSource menuAudioSource;
         [SerializeField] private PostProcessVolume volume;
         [SerializeField] private GameObject pauseMenu;
         [SerializeField] private GameObject pauseWindow;
         [SerializeField] private GameObject deathMenu;
         [SerializeField] private GameObject settingsWindow;
+        [SerializeField] private AudioClip espSound;
 
         public void Update()
         {
             if (!Input.GetKeyDown(KeyCode.Escape) || deathMenu.activeSelf || settingsWindow.activeSelf) return;
+            menuAudioSource.PlayOneShot(espSound);
             if (isOnPause)
                 Resume();
             else
