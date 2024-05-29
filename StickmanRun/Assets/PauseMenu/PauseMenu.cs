@@ -7,6 +7,7 @@ namespace PauseMenu
     public class PauseMenu : MonoBehaviour
     {
         private bool isOnPause;
+        [SerializeField] private AudioSource audioSource;
         [SerializeField] private PostProcessVolume volume;
         [SerializeField] private GameObject pauseMenu;
         [SerializeField] private GameObject pauseWindow;
@@ -24,6 +25,7 @@ namespace PauseMenu
 
         public void Resume()
         {
+            audioSource.UnPause();
             volume.enabled = true;
             pauseWindow.SetActive(false);
             pauseMenu.SetActive(false);
@@ -39,6 +41,7 @@ namespace PauseMenu
         
         private void Pause()
         {
+            audioSource.Pause();
             volume.enabled = false;
             pauseWindow.SetActive(true);
             pauseMenu.SetActive(true);
