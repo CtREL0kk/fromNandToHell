@@ -1642,7 +1642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522620863}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -26, y: 4, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2828,6 +2828,14 @@ PrefabInstance:
       propertyPath: settingsWindow
       value: 
       objectReference: {fileID: 1003824729}
+    - target: {fileID: 2858802988151749502, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 25583b4a1b81e4d46b22e551372931d4, type: 3}
+    - target: {fileID: 2858802988151749502, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 522620864}
     - target: {fileID: 2858802988151749502, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
       propertyPath: _lineRenderer
       value: 

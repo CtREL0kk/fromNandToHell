@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class Raycastshoot : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootSound;
     [SerializeField] private GameObject _impactEffect;
     [SerializeField] private int _damage = 40;
     [SerializeField] private Transform _spavnPoint;
@@ -17,6 +19,7 @@ public class Raycastshoot : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
+            audioSource.PlayOneShot(shootSound);
             StartCoroutine(Raycast(_lineRenderer, _spavnPoint, _damage, _spavnPoint.right, _damageableLayers));
         }      
     }
