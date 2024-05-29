@@ -969,6 +969,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1857649220809690526, guid: 08ff660ba3ed6e64e9d5910392946fbd, type: 3}
   m_PrefabInstance: {fileID: 1170375472058078982}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &310586183 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6694853309146602378, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+  m_PrefabInstance: {fileID: 970215367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &386162800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,7 +2820,7 @@ PrefabInstance:
     - target: {fileID: 2462121594306712512, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 522620864}
+      objectReference: {fileID: 2066805133}
     - target: {fileID: 2462121594306712512, guid: c5de894998a41804ab08a896d03f36f8, type: 3}
       propertyPath: pauseWindow
       value: 
@@ -3476,6 +3481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2144626609701498955, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Name
+      value: BirdWithSound
+      objectReference: {fileID: 0}
     - target: {fileID: 3278839100463412443, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
       propertyPath: m_Name
       value: Many Birds
@@ -3520,10 +3529,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6198315444061834943, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 522620864}
+    - target: {fileID: 6198315444061834943, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: birdsFlySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 226d6c9be071a48edb421eee0a3a44ba, type: 3}
+    m_RemovedComponents:
+    - {fileID: 8508216207300875536, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2144626609701498955, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1970497210}
   m_SourcePrefab: {fileID: 100100000, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
 --- !u!1 &980938976
 GameObject:
@@ -6949,6 +6970,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936158473}
   m_CullTransparentMesh: 1
+--- !u!1 &1970497205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2144626609701498955, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+  m_PrefabInstance: {fileID: 970215367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1970497210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970497205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b63029d4769456b9f320f7f97326cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 2066805133}
+  birdsFlySound: {fileID: 8300000, guid: 226d6c9be071a48edb421eee0a3a44ba, type: 3}
+  birdSpeed: 20
+  yThreshold: 20
+  trigerZone: {fileID: 310586183}
 --- !u!1 &2066805132
 GameObject:
   m_ObjectHideFlags: 0

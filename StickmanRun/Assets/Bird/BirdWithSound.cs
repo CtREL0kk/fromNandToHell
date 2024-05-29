@@ -1,9 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class BirdWithSound : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip birdsFlySound;
     [SerializeField] private float birdSpeed = 2f;
     [SerializeField] private float yThreshold = 10f;
     [SerializeField] private CircleCollider2D trigerZone;
@@ -31,6 +32,7 @@ public class Bird : MonoBehaviour
 
     public void StartFlying()
     {
+        audioSource.PlayOneShot(birdsFlySound);
         isFlying = true;
         StartCoroutine(FlyRandomly());
         animator.SetBool("IsFlying", true);
