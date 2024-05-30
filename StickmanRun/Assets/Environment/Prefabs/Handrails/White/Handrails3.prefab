@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6025700671344123675}
-  - component: {fileID: 1245163068454817995}
+  - component: {fileID: 3104740333808357957}
   m_Layer: 0
-  m_Name: New Prefab 1
+  m_Name: Handrails3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7718147860861341148}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.83, y: 0.69, z: 0}
-  m_LocalScale: {x: 0.1352904, y: 0.1352904, z: 0.1352904}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 111, y: -17.16, z: 0}
+  m_LocalScale: {x: 0.5493, y: 0.5493, z: 0.5493}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1245163068454817995
+--- !u!212 &3104740333808357957
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 1879338023
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 993132029, guid: bf0aed52f1b4d7a4f81dfa3eccda60a4, type: 3}
+  m_Sprite: {fileID: 298182804, guid: bf0aed52f1b4d7a4f81dfa3eccda60a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.213226, y: 4.43}
+  m_Size: {x: 6.5315948, y: 4.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

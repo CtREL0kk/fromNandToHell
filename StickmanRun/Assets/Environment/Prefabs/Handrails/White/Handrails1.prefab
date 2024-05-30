@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2842164904448642554
+--- !u!1 &7718147860861341148
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3608244391154927987}
-  - component: {fileID: 4011356455487441341}
+  - component: {fileID: 6025700671344123675}
+  - component: {fileID: 6778616314281448352}
   m_Layer: 0
-  m_Name: New Prefab 9
+  m_Name: Handrails1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3608244391154927987
+--- !u!4 &6025700671344123675
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2842164904448642554}
+  m_GameObject: {fileID: 7718147860861341148}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.56, y: 1.31, z: 0}
-  m_LocalScale: {x: 0.2881901, y: 0.30418465, z: 0.30418465}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -8.231502, y: 0.70519924, z: 0}
+  m_LocalScale: {x: 0.5352904, y: 0.5352904, z: 0.5352904}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4011356455487441341
+--- !u!212 &6778616314281448352
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2842164904448642554}
+  m_GameObject: {fileID: 7718147860861341148}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,13 +72,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1879338023
   m_SortingLayer: 3
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 1173496785, guid: 06b70a34be00e934d8ef5425013f114f, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -1220945572, guid: bf0aed52f1b4d7a4f81dfa3eccda60a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.883634, y: 4.67}
+  m_Size: {x: 14.66358, y: 4.7599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
