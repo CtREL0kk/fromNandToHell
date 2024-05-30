@@ -16,12 +16,12 @@ public class Raycastshoot : MonoBehaviour
 
     void Update()
     {
-        if (pauseWindow.activeSelf || settingsWindow.activeSelf) return;
+        // if (pauseWindow.activeSelf || settingsWindow.activeSelf) return;
         RotateGun();
         
         if (Input.GetMouseButtonDown(0))
         {
-            audioSource.PlayOneShot(shootSound);
+            // audioSource.PlayOneShot(shootSound);
             StartCoroutine(Raycast(_lineRenderer, _spavnPoint, _damage, _spavnPoint.right, _damageableLayers));
         }      
     }

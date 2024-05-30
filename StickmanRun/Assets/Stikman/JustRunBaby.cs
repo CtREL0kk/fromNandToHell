@@ -33,7 +33,9 @@ public class Keyboard : MonoBehaviour
 
     private void Update()
     {
-        if (isDead || pauseWindow.activeSelf || settingsWindow.activeSelf) return;
+        if (isDead )
+            //|| pauseWindow.activeSelf || settingsWindow.activeSelf) 
+            return;
         HorizontalMove();
         VerticalMove();
     }
@@ -117,9 +119,8 @@ public class Keyboard : MonoBehaviour
     {
         if (whiteSquareInstance == null)
         {
-            audioSource.PlayOneShot(deathSound);
+            // audioSource.PlayOneShot(deathSound);
             whiteSquareInstance = Instantiate(whiteSquare, checkWallPoint.transform.position, Quaternion.identity);
-            whiteSquareInstance.transform.position = whiteSquareInstance.transform.position + new Vector3(0, 0, -2);
             moveSpeed = 0;
             StartShakeCamera();
             StartCoroutine(FadeOutCoroutine());

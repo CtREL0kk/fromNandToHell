@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7319329987495848600}
-  - component: {fileID: 2067562143918993186}
+  - component: {fileID: 3952672302831874485}
   m_Layer: 0
-  m_Name: New Prefab 4
+  m_Name: Conditioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_GameObject: {fileID: 7392171996354076132}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 109.06002, y: -30.7, z: -1.312039}
-  m_LocalScale: {x: 0.8414, y: 0.8414, z: 0.8414}
+  m_LocalPosition: {x: -27.823675, y: -2.765048, z: -1.312039}
+  m_LocalScale: {x: 0.28279486, y: 0.28279486, z: 0.28279486}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2067562143918993186
+--- !u!212 &3952672302831874485
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,15 +70,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1879338023
-  m_SortingLayer: 3
+  m_SortingLayerID: -1480219783
+  m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 4bf8e7e342c357742b66c4d4cc657b98, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f489ab6b3577d6947822966e3e2571df, type: 3}
+  m_Color: {r: 0.9169811, g: 0.9169811, b: 0.9169811, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.004884, y: 30.000002}
+  m_Size: {x: 20, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
