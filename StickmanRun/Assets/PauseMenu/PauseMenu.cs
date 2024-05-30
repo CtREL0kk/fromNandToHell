@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace PauseMenu
 {

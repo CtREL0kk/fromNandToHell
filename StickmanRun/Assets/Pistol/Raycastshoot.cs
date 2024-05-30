@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -55,10 +54,7 @@ public class Raycastshoot : MonoBehaviour
         if (hitInfo)
         {
             var damageableObject = hitInfo.transform.GetComponent<IDamageable>();
-            if (damageableObject != null)
-            {
-                damageableObject.TakeDamage(damage);
-            }
+            damageableObject?.TakeDamage(damage);
 
             //Instantiate(_impactEffect, hitInfo.point, Quaternion.identity) ���������� ��� ������� �� ��������;
             lineRenderer.SetPosition(0, spavnPoint.position);

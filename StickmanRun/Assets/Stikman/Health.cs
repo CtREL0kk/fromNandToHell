@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 public class Helth : MonoBehaviour, IDamageable
 {
-    [SerializeField] int hp = 100;
-    [SerializeField] Camera playerCamera;
+    [SerializeField] private int hp = 100;
+    [SerializeField] private Camera playerCamera;
     private GameObject deathWindow;
     private PostProcessVolume postProcess;
     private AudioSource musicAudioSource;

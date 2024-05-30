@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class Keyboard : MonoBehaviour
 {
@@ -21,7 +19,7 @@ public class Keyboard : MonoBehaviour
     private Animator an;
     private BoxCollider2D cl;
     private bool isDead = false;
-    private bool _isGrounded => 
+    private bool IsGrounded => 
         Physics2D.OverlapArea(checkGround.bounds.min, checkGround.bounds.max, LayerMask.GetMask("Ground"));
 
     public void Start()
@@ -62,7 +60,7 @@ public class Keyboard : MonoBehaviour
 
     private void Tackle()
     {
-        if (Input.GetKeyDown(KeyCode.S) && _isGrounded)
+        if (Input.GetKeyDown(KeyCode.S) && IsGrounded)
         {
             audioSource.PlayOneShot(tackleSound);
             an.SetTrigger("Tackle");
@@ -72,12 +70,12 @@ public class Keyboard : MonoBehaviour
     
     private void Jump()
     {
-        if (!_isGrounded && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
+        if (!IsGrounded && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             rb.AddForce(-Vector3.up * forceJump);
         }
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _isGrounded && !an.GetCurrentAnimatorStateInfo(0).IsName("Tackle"))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsGrounded && !an.GetCurrentAnimatorStateInfo(0).IsName("Tackle"))
         {
             rb.AddForce(Vector3.up * forceJump, ForceMode2D.Impulse);
             an.SetTrigger("Jump");
@@ -135,10 +133,10 @@ public class Keyboard : MonoBehaviour
         }
     }
 
-    [SerializeField] CameraShake cameraShake;
+    [SerializeField] private CameraShake cameraShake;
     private void StartShakeCamera() => cameraShake.ShakeCamera(fadeDuration);
-    
-    IEnumerator FadeOutCoroutine()
+
+    private IEnumerator FadeOutCoroutine()
     {
         if (whiteSquareInstance == null)
             yield break; 
