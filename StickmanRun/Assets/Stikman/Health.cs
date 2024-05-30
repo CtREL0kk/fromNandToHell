@@ -1,22 +1,30 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.Serialization;
 
 public class Helth : MonoBehaviour, IDamageable
 {
     [SerializeField] int hp = 100;
     [SerializeField] Camera playerCamera;
-    [SerializeField] private GameObject deathWindow;
-    [SerializeField] private PostProcessVolume volume;
-    [SerializeField] private AudioSource audioSource;
+    private GameObject deathWindow;
+    private PostProcessVolume postProcess;
+    private AudioSource musicAudioSource;
+
+    public void Start()
+    {
+        musicAudioSource = GameObject.FindWithTag("MusicAudioSource").GetComponent<AudioSource>();
+        postProcess = GameObject.FindWithTag("MainCamera").GetComponent<PostProcessVolume>();
+        var canvas = GameObject.FindWithTag("CanvasUI");
+        deathWindow = canvas.transform.GetChild(2).gameObject;
+    }
     
     public void TakeDamage(int damage)
     {
         hp -= damage;
         if (hp < 0)
         {
-            audioSource.Pause();
-            volume.enabled = false;
+            musicAudioSource.Pause();
+            postProcess.enabled = false;
             deathWindow.SetActive(true);
             playerCamera.transform.parent = null;
             //DisableHead();

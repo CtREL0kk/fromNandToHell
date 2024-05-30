@@ -1,20 +1,20 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
+using UnityEngine.UI;
+
 
 public class Keyboard : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10;
     [SerializeField] private float forceJump = 40;
     [SerializeField] private BoxCollider2D checkGround;
-    [SerializeField] private AudioClip jumpSound;
-    [SerializeField] private AudioClip tackleSound;
-    [SerializeField] private AudioClip deathSound;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private GameObject pauseWindow;
-    [SerializeField] private GameObject settingsWindow;
+    
+    private AudioClip jumpSound;
+    private AudioClip tackleSound;
+    private AudioClip deathSound;
+    private AudioSource audioSource;
+    private GameObject pauseWindow;
+    private GameObject settingsWindow;
     
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -24,17 +24,25 @@ public class Keyboard : MonoBehaviour
     private bool _isGrounded => 
         Physics2D.OverlapArea(checkGround.bounds.min, checkGround.bounds.max, LayerMask.GetMask("Ground"));
 
-    private void Start()
+    public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
+        
+        audioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
+        var canvas = GameObject.FindWithTag("CanvasUI");
+        pauseWindow = canvas.transform.GetChild(0).gameObject;
+        settingsWindow = canvas.transform.GetChild(1).gameObject;
+        
+        jumpSound = Resources.Load<AudioClip>("Audio/Sounds/Jump");
+        tackleSound = Resources.Load<AudioClip>("Audio/Sounds/Tackle");
+        deathSound = Resources.Load<AudioClip>("Audio/Sounds/Death");
     }
 
     private void Update()
     {
-        if (isDead )
-            //|| pauseWindow.activeSelf || settingsWindow.activeSelf) 
+        if (isDead || pauseWindow.activeSelf || settingsWindow.activeSelf)
             return;
         HorizontalMove();
         VerticalMove();
@@ -119,7 +127,7 @@ public class Keyboard : MonoBehaviour
     {
         if (whiteSquareInstance == null)
         {
-            // audioSource.PlayOneShot(deathSound);
+            audioSource.PlayOneShot(deathSound);
             whiteSquareInstance = Instantiate(whiteSquare, checkWallPoint.transform.position, Quaternion.identity);
             moveSpeed = 0;
             StartShakeCamera();

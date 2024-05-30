@@ -1,27 +1,38 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 
 public class Raycastshoot : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseWindow;
-    [SerializeField] private GameObject settingsWindow;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip shootSound;
     [SerializeField] private GameObject _impactEffect;
     [SerializeField] private int _damage = 40;
     [SerializeField] private Transform _spavnPoint;
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private LayerMask _damageableLayers;
+    private GameObject pauseWindow;
+    private GameObject settingsWindow;
+    private AudioSource soundsAudioSource;
+    private AudioClip shootSound;
+
+
+    public void Start()
+    {
+        soundsAudioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
+        shootSound = Resources.Load<AudioClip>("Audio/Sounds/Shoot");
+        var canvas = GameObject.FindWithTag("CanvasUI");
+        pauseWindow = canvas.transform.GetChild(0).gameObject;
+        settingsWindow = canvas.transform.GetChild(1).gameObject;
+    }
 
     void Update()
     {
-        // if (pauseWindow.activeSelf || settingsWindow.activeSelf) return;
+        if (pauseWindow.activeSelf || settingsWindow.activeSelf) return;
         RotateGun();
         
         if (Input.GetMouseButtonDown(0))
         {
-            // audioSource.PlayOneShot(shootSound);
+            soundsAudioSource.PlayOneShot(shootSound);
             StartCoroutine(Raycast(_lineRenderer, _spavnPoint, _damage, _spavnPoint.right, _damageableLayers));
         }      
     }
