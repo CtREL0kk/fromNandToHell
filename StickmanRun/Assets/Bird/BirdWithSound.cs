@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class BirdWithSound : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip birdsFlySound;
     [SerializeField] private float birdSpeed = 2f;
     [SerializeField] private float yThreshold = 10f;
     [SerializeField] private CircleCollider2D trigerZone;
+    private AudioClip birdsFlySound;
+    private AudioSource soundsAudioSource;
     private bool isFlying = false;
     private Vector3 startPosition;
     private Animator animator;
 
     private void Start()
     {
+        soundsAudioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
+        birdsFlySound = Resources.Load<AudioClip>("Audio/Sounds/Birds");
         animator = GetComponent<Animator>();
         startPosition= transform.position;
     }
@@ -32,7 +34,7 @@ public class BirdWithSound : MonoBehaviour
 
     public void StartFlying()
     {
-        audioSource.PlayOneShot(birdsFlySound);
+        soundsAudioSource.PlayOneShot(birdsFlySound);
         isFlying = true;
         StartCoroutine(FlyRandomly());
         animator.SetBool("IsFlying", true);
