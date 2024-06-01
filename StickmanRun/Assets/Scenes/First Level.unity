@@ -12800,6 +12800,7 @@ MonoBehaviour:
   pauseWindow: {fileID: 450515982}
   deathMenu: {fileID: 980938976}
   settingsWindow: {fileID: 1003824729}
+  pashalkoWindow: {fileID: 1124554287}
 --- !u!114 &1400611245
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Keyboard : MonoBehaviour
 {
@@ -7,12 +8,16 @@ public class Keyboard : MonoBehaviour
     [SerializeField] private float forceJump = 40;
     [SerializeField] private BoxCollider2D checkGround;
     
+    private AudioSource musicAudioSource;
+    private AudioSource soundsAudioSource;
     private AudioClip jumpSound;
     private AudioClip tackleSound;
     private AudioClip deathSound;
-    private AudioSource audioSource;
+    
     private GameObject pauseWindow;
     private GameObject settingsWindow;
+    private GameObject deathWindow;
+    private PostProcessVolume postProcess;
     
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -28,14 +33,16 @@ public class Keyboard : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
         
-        audioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
+        postProcess = GameObject.FindWithTag("MainCamera").GetComponent<PostProcessVolume>();
+        musicAudioSource = GameObject.FindWithTag("MusicAudioSource").GetComponent<AudioSource>();
+        soundsAudioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
         var canvas = GameObject.FindWithTag("CanvasUI");
         pauseWindow = canvas.transform.GetChild(0).gameObject;
         settingsWindow = canvas.transform.GetChild(1).gameObject;
-        
+        deathWindow = canvas.transform.GetChild(2).gameObject;
+        deathSound = Resources.Load<AudioClip>("Audio/Sounds/Death");
         jumpSound = Resources.Load<AudioClip>("Audio/Sounds/Jump");
         tackleSound = Resources.Load<AudioClip>("Audio/Sounds/Tackle");
-        deathSound = Resources.Load<AudioClip>("Audio/Sounds/Death");
     }
 
     private void Update()
@@ -62,7 +69,7 @@ public class Keyboard : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S) && IsGrounded)
         {
-            audioSource.PlayOneShot(tackleSound);
+            soundsAudioSource.PlayOneShot(tackleSound);
             an.SetTrigger("Tackle");
         }
         else an.ResetTrigger("Tackle");
@@ -79,7 +86,7 @@ public class Keyboard : MonoBehaviour
         {
             rb.AddForce(Vector3.up * forceJump, ForceMode2D.Impulse);
             an.SetTrigger("Jump");
-            audioSource.PlayOneShot(jumpSound);
+            soundsAudioSource.PlayOneShot(jumpSound);
         }
         else
             an.ResetTrigger("Jump");
@@ -116,7 +123,16 @@ public class Keyboard : MonoBehaviour
            
         }
     }
-
+    
+    private void ActivateDeathMenu()
+    {
+        soundsAudioSource.PlayOneShot(deathSound);
+        musicAudioSource.Pause();
+        postProcess.enabled = false;
+        deathWindow.SetActive(true);
+    }
+    
+    
     [SerializeField] private GameObject whiteSquare;
     [SerializeField] private float fadeDuration = 3.0f;
     private GameObject whiteSquareInstance;
@@ -125,7 +141,7 @@ public class Keyboard : MonoBehaviour
     {
         if (whiteSquareInstance == null)
         {
-            audioSource.PlayOneShot(deathSound);
+            ActivateDeathMenu();
             whiteSquareInstance = Instantiate(whiteSquare, checkWallPoint.transform.position, Quaternion.identity);
             moveSpeed = 0;
             StartShakeCamera();
@@ -141,7 +157,7 @@ public class Keyboard : MonoBehaviour
         if (whiteSquareInstance == null)
             yield break; 
 
-        SpriteRenderer squareRenderer = whiteSquareInstance.GetComponent<SpriteRenderer>();
+        var squareRenderer = whiteSquareInstance.GetComponent<SpriteRenderer>();
         var startAlpha = squareRenderer.color.a;
         var startTime = Time.time;
 
@@ -166,8 +182,8 @@ public class Keyboard : MonoBehaviour
     {
         var boxCollider = wallHit.collider.GetComponent<BoxCollider2D>();
         if (boxCollider != null && transform.position.y < boxCollider.bounds.size.y)
-        {   
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        {
+            ActivateDeathMenu();
             saveWallHeight = boxCollider.bounds.size.y;
             moveSpeed = 0;
             DisableHead();
