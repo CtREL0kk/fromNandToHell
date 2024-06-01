@@ -46,7 +46,7 @@ namespace PauseMenu
 
         public void Restart()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Time.timeScale = 1f;
         }
         
