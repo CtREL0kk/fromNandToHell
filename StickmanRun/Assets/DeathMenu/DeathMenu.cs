@@ -12,7 +12,7 @@ namespace DeathMenu
 
         public void Restart()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
