@@ -15,6 +15,7 @@ namespace PauseMenu
         [SerializeField] private GameObject pauseWindow;
         [SerializeField] private GameObject deathMenu;
         [SerializeField] private GameObject settingsWindow;
+        [SerializeField] private GameObject pashalkoWindow;
 
         public void Start()
         {
@@ -26,7 +27,7 @@ namespace PauseMenu
 
         public void Update()
         {
-            if (!Input.GetKeyDown(KeyCode.Escape) || deathMenu.activeSelf || settingsWindow.activeSelf) return;
+            if (!Input.GetKeyDown(KeyCode.Escape) || deathMenu.activeSelf || settingsWindow.activeSelf || pashalkoWindow.activeSelf) return;
             soundsAudioSource.PlayOneShot(espSound);
             if (isOnPause)
                 Resume();
