@@ -544,6 +544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 6410956900240098277, guid: 98f374db32cd0b14a9127badd2a3f068, type: 3}
+      propertyPath: _damageableLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1296,7 +1300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7119106072597419110, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
       propertyPath: m_Mass
-      value: 6.022116
+      value: 6.0221157
       objectReference: {fileID: 0}
     - target: {fileID: 7476310849374208732, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
       propertyPath: m_Name

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -21,7 +22,7 @@ public class RandKeyboard : MonoBehaviour
     private PostProcessVolume postProcess;
 
     private DistanceCounter distanceCounter;
-    public float CurrentSpeed; //{ get; private set; }
+    public float CurrentSpeed { get; private set; }
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -164,12 +165,17 @@ public class RandKeyboard : MonoBehaviour
         if (whiteSquareInstance == null)
             yield break;
 
+        //Debug.Log("Start Corutine");
+
         var squareRenderer = whiteSquareInstance.GetComponent<SpriteRenderer>();
         var startAlpha = squareRenderer.color.a;
         var startTime = Time.time;
+        KillStickman();
+        //Debug.Log("Kill Stickman");
 
         while (Time.time - startTime < fadeDuration)
         {
+            //Debug.Log("Cycle");
             var timePassed = Time.time - startTime;
             var alpha = Mathf.Lerp(startAlpha, 0f, timePassed / fadeDuration);
 
@@ -179,10 +185,9 @@ public class RandKeyboard : MonoBehaviour
 
             yield return null;
         }
-
+        
         Destroy(whiteSquareInstance);
         whiteSquareInstance = null;
-        KillStickman();
     }
 
     private void Fall(RaycastHit2D wallHit)

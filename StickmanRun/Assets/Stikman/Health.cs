@@ -11,20 +11,7 @@ public class Helth : MonoBehaviour, IDamageable
         if (hp < 0)
         {
             playerCamera.transform.parent = null;
-            //DisableHead();
             gameObject.SetActive(false);
-        }
-    }
-
-    private void DisableHead()
-    {
-        for (var i = 0; i < transform.childCount; i++) 
-        {
-            var child = transform.GetChild(i);
-            if (child != null && child.name == "������")
-            {
-                child.GetComponent<CircleCollider2D>().enabled = false;
-            }
         }
     }
 }
