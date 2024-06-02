@@ -11,6 +11,8 @@ TagManager:
   - MusicAudioSource
   - DeathWindow
   - CanvasUI
+  - EndPlatform
+  - StartPlatform
   layers:
   - Default
   - TransparentFX
