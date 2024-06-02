@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlatformManager : MonoBehaviour
 {
     public float platformGap = 10f;
-    public float maxYOffset = 2f; // Максимальный диапазон рандомизации по оси Y
-    public float maxChangeInY = 0.1f; // Максимальное изменение позиции по Y между платформами
+    public float maxYOffset = 2f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ Y
+    public float maxChangeInY = 0.1f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Y пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public GameObject[] platformPrefabs;
     public Transform player;
     public float distanceToGenerate = 300f;
@@ -19,7 +19,7 @@ public class PlatformManager : MonoBehaviour
 
     void Start()
     {
-        lastEndPositionY = 0;
+        lastEndPositionY = player.position.y - 2;
         lastEndPositionX = player.position.x;
         SpawnInitialPlatforms();
     }
@@ -65,7 +65,7 @@ public class PlatformManager : MonoBehaviour
         var offsetX = activePlatforms.Count > 0 ? dynamicPlatformGap : 0;
         var newXPosition = lastEndPositionX + offsetX - startTransform.localPosition.x;
 
-        var newYPosition = 0f;
+        var newYPosition = lastEndPositionY;
         if (activePlatforms.Count > 0)
         {
             var randomYOffset = Random.Range(-maxYOffset, maxYOffset);

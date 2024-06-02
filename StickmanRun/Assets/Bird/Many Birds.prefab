@@ -1135,9 +1135,13 @@ PrefabInstance:
       propertyPath: birdSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3829429104708127650, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6842272392942972665, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}
       propertyPath: m_Name
-      value: Bird 1 (21)
+      value: BirdWithSound
       objectReference: {fileID: 0}
     - target: {fileID: 6842272392942972665, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}
       propertyPath: m_Layer
@@ -1194,8 +1198,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6842272392942972665, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9100269794040994302}
   m_SourcePrefab: {fileID: 100100000, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}
+--- !u!58 &1939246147213587787 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6475625323109919737, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}
+  m_PrefabInstance: {fileID: 4843512498777251506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2144626609701498955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6842272392942972665, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}
+  m_PrefabInstance: {fileID: 4843512498777251506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9100269794040994302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144626609701498955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b63029d4769456b9f320f7f97326cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdSpeed: 20
+  yThreshold: 20
+  triggerZone: {fileID: 1939246147213587787}
 --- !u!4 &3380486852046121715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7916899425624929345, guid: 1aba2fc37d176f74e96f69c34f42bd4c, type: 3}

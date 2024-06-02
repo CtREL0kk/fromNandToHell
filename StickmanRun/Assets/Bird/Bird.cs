@@ -38,6 +38,7 @@ public class Bird : MonoBehaviour
 
     public void StartFlying()
     {
+        Debug.Log("Start Fly");
         isFlying = true;
         StartCoroutine(FlyRandomly());
         animator.SetBool("IsFlying", true);

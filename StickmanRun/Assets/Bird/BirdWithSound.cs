@@ -15,6 +15,7 @@ public class BirdWithSound : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Start BirdsSound");
         soundsAudioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
         birdsFlySound = Resources.Load<AudioClip>("Audio/Sounds/Birds");
         animator = GetComponent<Animator>();
