@@ -1,12 +1,13 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
     [SerializeField] private float birdSpeed = 2f;
     [SerializeField] private float yThreshold = 10f;
-    [SerializeField] private CircleCollider2D trigerZone;
-    private bool isFlying = false;
+    [SerializeField] private CircleCollider2D triggerZone;
+    private bool isFlying;
     private Vector3 startPosition;
     private Animator animator;
 
@@ -19,13 +20,20 @@ public class Bird : MonoBehaviour
 
     private void Update()
     {
-        if (!isFlying && EnemysWeapon.CheckPlayer(trigerZone))
+        if (!isFlying && PlayerInArea())
             StartFlying();
         
         if (isFlying && transform.position.y - startPosition.y > yThreshold)
         {
             Destroy(gameObject);
         }
+    }
+
+    private bool PlayerInArea()
+    {
+        var triggerZoneCenter = triggerZone.bounds.center;
+        var colliders = Physics2D.OverlapCircleAll(triggerZoneCenter, triggerZone.radius);
+        return colliders.Any(collider => collider.CompareTag("Player"));
     }
 
     public void StartFlying()
@@ -40,8 +48,8 @@ public class Bird : MonoBehaviour
         while (isFlying)
         {
             Vector3 randomDirection = new Vector3(
-                Random.Range(0.5f, 1.0f) * (Random.value > 0.5f ? 1 : -1), // ��������� �������� �� X
-                Random.Range(0.5f, 1.0f), // �������� �� Y ������ �������������
+                Random.Range(0.5f, 1.0f) * (Random.value > 0.5f ? 1 : -1),
+                Random.Range(0.5f, 1.0f),
                 0f
             ).normalized;
 
