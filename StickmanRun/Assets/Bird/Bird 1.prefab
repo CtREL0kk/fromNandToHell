@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   birdSpeed: 10
   yThreshold: 20
-  trigerZone: {fileID: 6475625323109919737}
+  triggerZone: {fileID: 6475625323109919737}
 --- !u!95 &3120283892726409820
 Animator:
   serializedVersion: 5

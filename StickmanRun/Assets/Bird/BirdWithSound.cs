@@ -1,11 +1,12 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class BirdWithSound : MonoBehaviour
 {
     [SerializeField] private float birdSpeed = 2f;
     [SerializeField] private float yThreshold = 10f;
-    [SerializeField] private CircleCollider2D trigerZone;
+    [SerializeField] private CircleCollider2D triggerZone;
     private AudioClip birdsFlySound;
     private AudioSource soundsAudioSource;
     private bool isFlying = false;
@@ -23,13 +24,20 @@ public class BirdWithSound : MonoBehaviour
 
     private void Update()
     {
-        if (!isFlying && EnemysWeapon.CheckPlayer(trigerZone))
+        if (!isFlying && PlayerInArea())
             StartFlying();
         
         if (isFlying && transform.position.y - startPosition.y > yThreshold)
         {
             Destroy(gameObject);
         }
+    }
+    
+    private bool PlayerInArea()
+    {
+        var triggerZoneCenter = triggerZone.bounds.center;
+        var colliders = Physics2D.OverlapCircleAll(triggerZoneCenter, triggerZone.radius);
+        return colliders.Any(collider => collider.CompareTag("Player"));
     }
 
     public void StartFlying()
