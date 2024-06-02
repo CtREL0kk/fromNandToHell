@@ -55,9 +55,8 @@ public class PlatformManager : MonoBehaviour
 
         var newPlatform = Instantiate(prefab);
 
-        var numberOfLevelPlatform = Random.Range(2, 2);
-        var startTransform = newPlatform.transform.Find($"Start{numberOfLevelPlatform}");
-        var endTransform = newPlatform.transform.Find($"End{numberOfLevelPlatform}");
+        var startTransform = FindBestStartTransform(newPlatform);
+        var endTransform = newPlatform.transform.Find($"End{startTransform.name.Substring(startTransform.name.Length - 1)}");
 
         var currentSpeed = player.GetComponent<RandKeyboard>().CurrentSpeed;
         var dynamicPlatformGap = platformGap + currentSpeed * 0.1f;
@@ -85,6 +84,32 @@ public class PlatformManager : MonoBehaviour
         lastEndPositionY = newYPosition;
 
         activePlatforms.Add(newPlatform);
+    }
+
+    private Transform FindBestStartTransform(GameObject platform)
+    {
+        var playerY = player.position.y;
+
+        var startTransforms = new List<Transform>();
+        foreach (var child in platform.GetComponentsInChildren<Transform>())
+        {
+            if (child.name.StartsWith("Start"))
+            {
+                startTransforms.Add(child);
+            }
+        }
+
+        startTransforms.Sort((a, b) => a.position.y.CompareTo(b.position.y));
+
+        foreach (var startTransform in startTransforms)
+        {
+            if (startTransform.position.y >= playerY)
+            {
+                return startTransform;
+            }
+        }
+
+        return startTransforms[startTransforms.Count - 1];
     }
 
     void DestroyPlatform()
