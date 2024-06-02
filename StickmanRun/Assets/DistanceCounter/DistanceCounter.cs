@@ -8,6 +8,7 @@ public class DistanceCounter : MonoBehaviour
     private Vector3 startPosition;
     private GameObject player;
     private Text distanceText;
+    public float distance { get; private set; }
 
     private void Awake()
     {

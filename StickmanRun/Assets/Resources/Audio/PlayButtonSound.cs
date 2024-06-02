@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class PlayButtonSound : MonoBehaviour
 {
-   [SerializeField] private AudioSource audioSource;
-   [SerializeField] private AudioClip buttonSound;
+    private AudioSource soundsAudioSource;
+    private AudioClip buttonSound;
 
    public void Play()
    {
-      audioSource.PlayOneShot(buttonSound);
+        soundsAudioSource.PlayOneShot(buttonSound);
    }
+
+    public void Start()
+    {
+        soundsAudioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
+        buttonSound = Resources.Load<AudioClip>("Audio/Sounds/Button");
+    }
 }
