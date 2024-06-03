@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlatformManager : MonoBehaviour
 {
     [SerializeField] private float platformGap = 10f;
-    [SerializeField] private float maxYOffset = 2f; // Максимальный диапазон рандомизации по оси Y
-    [SerializeField] private float maxChangeInY = 0.1f; // Максимальное изменение позиции по Y между платформами
+    [SerializeField] private float maxYOffset = 2f; // РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ РґРёР°РїР°Р·РѕРЅ СЂР°РЅРґРѕРјРёР·Р°С†РёРё РїРѕ РѕСЃРё Y
+    [SerializeField] private float maxChangeInY = 0.1f; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РёР·РјРµРЅРµРЅРёРµ РїРѕР·РёС†РёРё РїРѕ Y РјРµР¶РґСѓ РїР»Р°С‚С„РѕСЂРјР°РјРё
     [SerializeField] private GameObject[] platformPrefabs;
     [SerializeField] private Transform player;
     [SerializeField] private float distanceToDelete = 100f;
@@ -44,7 +44,8 @@ public class PlatformManager : MonoBehaviour
                 distanceLastTable = (int)(distanceCounter.distance / 500);
                 SpawnPlatform(distanceTablePrefab);
             }
-            SpawnPlatform();
+            else
+                SpawnPlatform();
         }
 
         if (activePlatforms.Count > 0 && activePlatforms[0].transform.position.x < player.position.x - distanceToDelete)
@@ -70,7 +71,7 @@ public class PlatformManager : MonoBehaviour
     void SpawnPlatform(GameObject takePrefab = null)
     {
         GameObject prefab;
-        if (prefab == null)
+        if (takePrefab is null)
         {
             do
             {
