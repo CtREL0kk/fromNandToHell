@@ -39,13 +39,13 @@ public class PlatformManager : MonoBehaviour
         if (player.position.x >= lastStartPosition && player.position.x <= lastEndPositionX)
         {
             //Debug.Log("Spawn" + "last:" + lastEndPositionX);
-            if ((int)(distanceCounter.distance / 500) > distanceLastTable)
+            /*if ((int)(distanceCounter.distance / 500) > distanceLastTable)
             {
                 distanceLastTable = (int)(distanceCounter.distance / 500);
                 SpawnPlatform(distanceTablePrefab);
             }
-            else
-                SpawnPlatform();
+            else*/
+            SpawnPlatform();
         }
 
         if (activePlatforms.Count > 0 && activePlatforms[0].transform.position.x < player.position.x - distanceToDelete)
