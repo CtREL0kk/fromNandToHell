@@ -2692,9 +2692,9 @@ Transform:
   - {fileID: 9055005670741374834}
   - {fileID: 7922438035275284879}
   - {fileID: 638874261476408574}
-  - {fileID: 6864829213137324436}
   - {fileID: 6113506230859381968}
   - {fileID: 6930152213389591495}
+  - {fileID: 6864829213137324436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7091569744056351795
@@ -2793,6 +2793,7 @@ MonoBehaviour:
   forceJump: 200
   boost: 2
   checkGround: {fileID: 7168365401638469443}
+  CurrentSpeed: 0
   checkWallPoint: {fileID: 6864829213137324436}
   distanceToDeathFromPlatform: 30
   whiteSquare: {fileID: 7153646266560063524, guid: 92022d4b38de9924993b93bc1d1dae1a, type: 3}
@@ -2810,6 +2811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee8f80b7a844fb64b949c33f49cb4e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthBar: {fileID: 0}
+  WhiteHealthBar: {fileID: 0}
   hp: 100
   playerCamera: {fileID: 7906082686538470298}
 --- !u!1 &6872832321751296583
@@ -3081,8 +3084,8 @@ Transform:
   m_GameObject: {fileID: 7513929937039729029}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.39, y: 1.71, z: 0.38407463}
-  m_LocalScale: {x: 0.38800043, y: 0.37662533, z: 1.387202}
+  m_LocalPosition: {x: -0.27821183, y: 2.5277066, z: 0.3840746}
+  m_LocalScale: {x: 0.38800037, y: 0.37662527, z: 1.3872019}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4326057857272111611}

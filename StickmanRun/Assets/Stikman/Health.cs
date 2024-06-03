@@ -11,7 +11,7 @@ public class Helth : MonoBehaviour, IDamageable
     {
         hp -= damage;
         HealthBar.fillAmount = hp * 0.01f;
-        if (hp < 0)
+        if (hp <= 0)
         {
             WhiteHealthBar.fillAmount = 0.0f;
             gameObject.GetComponent<RandKeyboard>().ActivateDeathMenu();
