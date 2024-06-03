@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Random Scene.unity
     guid: 09d8ebc6172eaf34ab1cc90c534f8b4b
+  - enabled: 1
+    path: Assets/Scenes/Rickroll.unity
+    guid: 0088083ddfc912a41b354bd25e85705a
   m_configObjects: {}

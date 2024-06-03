@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Story");
     }
+    
+    public void PlayPrank()
+    {
+        SceneManager.LoadScene("Rickroll");
+    }
 
     public void ExitGame()
     {
