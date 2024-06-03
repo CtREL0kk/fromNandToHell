@@ -20,8 +20,8 @@ public class Raycastshoot : MonoBehaviour
         soundsAudioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
         shootSound = Resources.Load<AudioClip>("Audio/Sounds/Shoot");
         var canvas = GameObject.FindWithTag("CanvasUI");
-        pauseWindow = canvas.transform.GetChild(0).gameObject;
-        settingsWindow = canvas.transform.GetChild(1).gameObject;
+        pauseWindow = canvas.transform.GetChild(2).gameObject;
+        settingsWindow = canvas.transform.GetChild(3).gameObject;
     }
 
     void Update()

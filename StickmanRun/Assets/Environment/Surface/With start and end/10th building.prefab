@@ -882,6 +882,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6197788743691262827, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197788743691262827, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -458
+      objectReference: {fileID: 0}
     - target: {fileID: 7119106072597419110, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
       propertyPath: m_Mass
       value: 6.0221157
@@ -1075,6 +1083,14 @@ PrefabInstance:
     - target: {fileID: 2449422730708480285, guid: 98f374db32cd0b14a9127badd2a3f068, type: 3}
       propertyPath: m_Name
       value: Sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760035386943115092, guid: 98f374db32cd0b14a9127badd2a3f068, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760035386943115092, guid: 98f374db32cd0b14a9127badd2a3f068, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -284
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

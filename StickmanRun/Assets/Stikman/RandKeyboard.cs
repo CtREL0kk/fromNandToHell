@@ -46,9 +46,9 @@ public class RandKeyboard : MonoBehaviour
         musicAudioSource = GameObject.FindWithTag("MusicAudioSource").GetComponent<AudioSource>();
         soundsAudioSource = GameObject.FindWithTag("SoundsAudioSource").GetComponent<AudioSource>();
         var canvas = GameObject.FindWithTag("CanvasUI");
-        pauseWindow = canvas.transform.GetChild(0).gameObject;
-        settingsWindow = canvas.transform.GetChild(1).gameObject;
-        deathWindow = canvas.transform.GetChild(2).gameObject;
+        pauseWindow = canvas.transform.GetChild(2).gameObject;
+        settingsWindow = canvas.transform.GetChild(3).gameObject;
+        deathWindow = canvas.transform.GetChild(4).gameObject;
         deathSound = Resources.Load<AudioClip>("Audio/Sounds/Death");
         jumpSound = Resources.Load<AudioClip>("Audio/Sounds/Jump");
         tackleSound = Resources.Load<AudioClip>("Audio/Sounds/Tackle");
@@ -80,8 +80,9 @@ public class RandKeyboard : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S) && IsGrounded)
         {
-            checkWallPoint.transform.localPosition -= new Vector3(0, 5, 0);
+            //checkWallPoint.transform.localPosition -= new Vector3(0, 3, 0);
             soundsAudioSource.PlayOneShot(tackleSound);
+            an.ResetTrigger("Jump");
             an.SetTrigger("Tackle");
         }
         else an.ResetTrigger("Tackle");
@@ -94,9 +95,10 @@ public class RandKeyboard : MonoBehaviour
             rb.AddForce(-Vector3.up * forceJump);
         }
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsGrounded && !an.GetCurrentAnimatorStateInfo(0).IsName("Tackle"))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsGrounded)
         {
             rb.AddForce(Vector3.up * forceJump, ForceMode2D.Impulse);
+            an.ResetTrigger("Jump");
             an.SetTrigger("Jump");
             soundsAudioSource.PlayOneShot(jumpSound);
         }
@@ -125,7 +127,8 @@ public class RandKeyboard : MonoBehaviour
         var wallHit2 = Physics2D.Raycast(wallOrigin1, wallDir, moveSpeed * Time.fixedDeltaTime, LayerMask.GetMask("Ground"));
         if (wallHit1.collider != null || wallHit2.collider != null)
         {
-            Debug.Log("Detect");
+            Debug.Log("1" + wallHit1.collider is null);
+            Debug.Log("2" + wallHit2.collider is null);
             var wallHit = wallHit1.collider == null ? wallHit2 : wallHit1;
             if (wallHit.collider.CompareTag("Obstacle"))
             {

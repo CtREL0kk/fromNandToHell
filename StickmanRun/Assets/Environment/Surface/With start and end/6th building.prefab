@@ -545,6 +545,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 2760035386943115092, guid: 98f374db32cd0b14a9127badd2a3f068, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 532
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760035386943115092, guid: 98f374db32cd0b14a9127badd2a3f068, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -86
+      objectReference: {fileID: 0}
     - target: {fileID: 6410956900240098277, guid: 98f374db32cd0b14a9127badd2a3f068, type: 3}
       propertyPath: _damageableLayers.m_Bits
       value: 256
@@ -1301,11 +1309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197788743691262827, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 506.7
+      value: -290
       objectReference: {fileID: 0}
     - target: {fileID: 6197788743691262827, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 774.6
+      value: -703
       objectReference: {fileID: 0}
     - target: {fileID: 7119106072597419110, guid: 2eb0ebee1ce5dea4782d0001cf6acc9f, type: 3}
       propertyPath: m_Mass
