@@ -22,7 +22,7 @@ public class RandKeyboard : MonoBehaviour
     private PostProcessVolume postProcess;
 
     private DistanceCounter distanceCounter;
-    public float CurrentSpeed { get; private set; }
+    public float CurrentSpeed; //{ get; private set; }
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -63,7 +63,7 @@ public class RandKeyboard : MonoBehaviour
     private void HorizontalMove()
     {
         var distance = distanceCounter.distance;
-        CurrentSpeed = (float)(moveSpeed + distance * 0.1 * boost) * Time.deltaTime ;
+        CurrentSpeed = (float)(moveSpeed + distance * 100 * boost) * Time.deltaTime ;
         transform.Translate(CurrentSpeed * Vector3.right);
     }
 
