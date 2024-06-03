@@ -239,45 +239,26 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 226d6c9be071a48edb421eee0a3a44ba, type: 3}
     - target: {fileID: 9100269794040994302, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9100269794040994302, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: triggerZone
+      value: 
+      objectReference: {fileID: 4087300625229227794}
     m_RemovedComponents:
     - {fileID: 8508216207300875536, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2144626609701498955, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1867669319859435336}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
---- !u!58 &834031682550259432 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1939246147213587787, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
-  m_PrefabInstance: {fileID: 1259465821233720227}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &916970656841210856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2144626609701498955, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
-  m_PrefabInstance: {fileID: 1259465821233720227}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1867669319859435336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916970656841210856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8b63029d4769456b9f320f7f97326cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  birdSpeed: 20
-  yThreshold: 20
-  triggerZone: {fileID: 834031682550259432}
 --- !u!4 &2711230872906637077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3808566857872290998, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+  m_PrefabInstance: {fileID: 1259465821233720227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &4087300625229227794 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3009397679330725041, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
   m_PrefabInstance: {fileID: 1259465821233720227}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1589760370746237325

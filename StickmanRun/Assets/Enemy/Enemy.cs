@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour, IDamageable
         audio = GetComponent<AudioSource>();
         var playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null) _mainCharacter = playerObject.transform;
-        _fireRate = fireRateConstant;
         _animator = GetComponent<Animator>();
         _player = GameObject.FindWithTag("Player").transform;
     }

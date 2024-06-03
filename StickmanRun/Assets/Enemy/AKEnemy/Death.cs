@@ -6,6 +6,5 @@ public class Death : StateMachineBehaviour
     { 
         var obj = animator.gameObject;
         Destroy(obj);
-        
     }
 }

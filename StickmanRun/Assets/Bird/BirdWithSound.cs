@@ -12,6 +12,7 @@ public class BirdWithSound : MonoBehaviour
     private bool isFlying = false;
     private Vector3 startPosition;
     private Animator animator;
+    private bool isPlayerInArea;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class BirdWithSound : MonoBehaviour
 
     private void Update()
     {
-        if (!isFlying && PlayerInArea())
+        if (!isFlying && isPlayerInArea)
             StartFlying();
         
         if (isFlying && transform.position.y - startPosition.y > yThreshold)
@@ -34,14 +35,12 @@ public class BirdWithSound : MonoBehaviour
         }
     }
     
-    private bool PlayerInArea()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        var triggerZoneCenter = triggerZone.bounds.center;
-        var colliders = Physics2D.OverlapCircleAll(triggerZoneCenter, triggerZone.radius);
-        return colliders.Any(collider => collider.CompareTag("Player"));
+        if (other.CompareTag("Player")) isPlayerInArea = true;
     }
 
-    public void StartFlying()
+    private void StartFlying()
     {
         soundsAudioSource.PlayOneShot(birdsFlySound);
         isFlying = true;
@@ -54,8 +53,8 @@ public class BirdWithSound : MonoBehaviour
         while (isFlying)
         {
             Vector3 randomDirection = new Vector3(
-                Random.Range(0.5f, 1.0f) * (Random.value > 0.5f ? 1 : -1), // ��������� �������� �� X
-                Random.Range(0.5f, 1.0f), // �������� �� Y ������ �������������
+                Random.Range(0.5f, 1.0f) * (Random.value > 0.5f ? 1 : -1),
+                Random.Range(0.5f, 1.0f),
                 0f
             ).normalized;
 

@@ -124,7 +124,7 @@ public class Keyboard : MonoBehaviour
         }
     }
     
-    private void ActivateDeathMenu()
+    public void ActivateDeathMenu()
     {
         soundsAudioSource.PlayOneShot(deathSound);
         musicAudioSource.Pause();

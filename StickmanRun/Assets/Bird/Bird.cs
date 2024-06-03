@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Bird : MonoBehaviour
 {
@@ -10,6 +10,7 @@ public class Bird : MonoBehaviour
     private bool isFlying;
     private Vector3 startPosition;
     private Animator animator;
+    private bool isPlayerInArea;
 
     private void Start()
     {
@@ -20,23 +21,19 @@ public class Bird : MonoBehaviour
 
     private void Update()
     {
-        if (!isFlying && PlayerInArea())
+        if (!isFlying && isPlayerInArea)
             StartFlying();
         
-        if (isFlying && transform.position.y - startPosition.y > yThreshold)
-        {
-            Destroy(gameObject);
-        }
+        if (isFlying && transform.position.y - startPosition.y > yThreshold) Destroy(gameObject);
     }
 
-    private bool PlayerInArea()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        var triggerZoneCenter = triggerZone.bounds.center;
-        var colliders = Physics2D.OverlapCircleAll(triggerZoneCenter, triggerZone.radius);
-        return colliders.Any(collider => collider.CompareTag("Player"));
+        if (other.CompareTag("Player")) isPlayerInArea = true;
     }
+    
 
-    public void StartFlying()
+    private void StartFlying()
     {
         Debug.Log("Start Fly");
         isFlying = true;

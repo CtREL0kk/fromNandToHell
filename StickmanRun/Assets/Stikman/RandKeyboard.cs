@@ -25,17 +25,15 @@ public class RandKeyboard : MonoBehaviour
     public float CurrentSpeed { get; private set; }
 
     private Rigidbody2D rb;
-    private SpriteRenderer sr;
     private Animator an;
     private BoxCollider2D cl;
-    private bool isDead = false;
+    private bool isDead;
     private bool IsGrounded =>
         Physics2D.OverlapArea(checkGround.bounds.min, checkGround.bounds.max, LayerMask.GetMask("Ground"));
 
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
         an = GetComponent<Animator>();
 
         distanceCounter = GameObject.Find("Random").GetComponent<DistanceCounter>();
@@ -102,7 +100,7 @@ public class RandKeyboard : MonoBehaviour
 
     [SerializeField] private Transform checkWallPoint;
     [SerializeField] private float distanceToDeathFromPlatform = 30;
-    private float? saveWallHeight = null;
+    private float? saveWallHeight;
     private void FixedUpdate()
     {
         if (isDead)
@@ -132,7 +130,7 @@ public class RandKeyboard : MonoBehaviour
         }
     }
 
-    private void ActivateDeathMenu()
+    public void ActivateDeathMenu()
     {
         soundsAudioSource.PlayOneShot(deathSound);
         musicAudioSource.Pause();
@@ -165,17 +163,14 @@ public class RandKeyboard : MonoBehaviour
         if (whiteSquareInstance == null)
             yield break;
 
-        //Debug.Log("Start Corutine");
 
         var squareRenderer = whiteSquareInstance.GetComponent<SpriteRenderer>();
         var startAlpha = squareRenderer.color.a;
         var startTime = Time.time;
         KillStickman();
-        //Debug.Log("Kill Stickman");
 
         while (Time.time - startTime < fadeDuration)
         {
-            //Debug.Log("Cycle");
             var timePassed = Time.time - startTime;
             var alpha = Mathf.Lerp(startAlpha, 0f, timePassed / fadeDuration);
 

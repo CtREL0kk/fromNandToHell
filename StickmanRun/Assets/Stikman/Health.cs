@@ -10,6 +10,7 @@ public class Helth : MonoBehaviour, IDamageable
         hp -= damage;
         if (hp < 0)
         {
+            gameObject.GetComponent<RandKeyboard>().ActivateDeathMenu();
             playerCamera.transform.parent = null;
             gameObject.SetActive(false);
         }

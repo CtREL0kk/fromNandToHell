@@ -619,11 +619,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7925983223903516973}
-  - component: {fileID: 5739331986290168784}
   - component: {fileID: 1893631097625912583}
   - component: {fileID: 3735840135531350327}
   - component: {fileID: 207124626397402117}
   - component: {fileID: 5338721064359399661}
+  - component: {fileID: 1831877151968661674}
+  - component: {fileID: 9152967096516136942}
+  - component: {fileID: 1665902499682356969}
   m_Layer: 8
   m_Name: Current Stickman
   m_TagString: Player
@@ -663,26 +665,6 @@ Transform:
   - {fileID: 1117815713371298800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5739331986290168784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124654126517252469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ceff9272e52ea44a3cb6113a67698c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 40
-  forceJump: 200
-  checkGround: {fileID: 3769135541052877364}
-  checkWallPoint: {fileID: 4532316599858516907}
-  distanceToDeathFromPlatform: 30
-  whiteSquare: {fileID: 7153646266560063524, guid: 92022d4b38de9924993b93bc1d1dae1a, type: 3}
-  fadeDuration: 3
-  cameraShake: {fileID: 119631329337605389}
 --- !u!50 &1893631097625912583
 Rigidbody2D:
   serializedVersion: 4
@@ -763,6 +745,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 8240495248171080883}
   indicatorPrefab: {fileID: 1837133203295150487, guid: b900ac05146285d4f8279fd3ef62c780, type: 3}
+--- !u!114 &1831877151968661674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124654126517252469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8f80b7a844fb64b949c33f49cb4e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  playerCamera: {fileID: 8240495248171080883}
+--- !u!58 &9152967096516136942
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124654126517252469}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &1665902499682356969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124654126517252469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb88f36f0d392d4590d469e70cb7b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 45
+  forceJump: 200
+  boost: 2
+  checkGround: {fileID: 3769135541052877364}
+  checkWallPoint: {fileID: 4532316599858516907}
+  distanceToDeathFromPlatform: 30
+  whiteSquare: {fileID: 7153646266560063524, guid: 92022d4b38de9924993b93bc1d1dae1a, type: 3}
+  fadeDuration: 3
+  cameraShake: {fileID: 119631329337605389}
 --- !u!1 &1776682237228446623
 GameObject:
   m_ObjectHideFlags: 0
