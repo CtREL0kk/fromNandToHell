@@ -19,7 +19,7 @@ public class DistanceCounter : MonoBehaviour
 
     void Update()
     {
-        var distance = (int)(player.transform.position.x - startPosition.x);
+        distance = (int)(player.transform.position.x - startPosition.x);
         distanceText.text = $"{distance} m";
     }
 }

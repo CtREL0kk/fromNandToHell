@@ -92,9 +92,9 @@ public class PlatformManager : MonoBehaviour
         }
 
         var currentSpeed = player.GetComponent<RandKeyboard>().CurrentSpeed;
-        var dynamicPlatformGap = platformGap + currentSpeed * 0.1f;
+        //var dynamicPlatformGap = platformGap + currentSpeed * 0.1f;
 
-        var offsetX = dynamicPlatformGap;
+        var offsetX = platformGap;
         var newXPosition = currentPlatformEndTransform.position.x + offsetX - startTransform.localPosition.x;
         //Debug.Log("center x: " + newXPosition);
 

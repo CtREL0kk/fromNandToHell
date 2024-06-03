@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class KillStickman : MonoBehaviour
 {
-    //private Helth health; 
-
-    void Start()
-    {
-        //health = GameObject.Find("Current Stickman").GetComponent<Helth>();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var health = collision.GetComponent<Helth>();

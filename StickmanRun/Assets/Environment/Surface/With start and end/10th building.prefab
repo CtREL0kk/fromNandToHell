@@ -773,12 +773,20 @@ PrefabInstance:
       value: Death
       objectReference: {fileID: 0}
     - target: {fileID: 4572486370964370153, guid: 0f6eeed3840dff246b4fe8cf315798bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 144.7523
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572486370964370153, guid: 0f6eeed3840dff246b4fe8cf315798bc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 11.008682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572486370964370153, guid: 0f6eeed3840dff246b4fe8cf315798bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.3303
       objectReference: {fileID: 0}
     - target: {fileID: 4572486370964370153, guid: 0f6eeed3840dff246b4fe8cf315798bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.7
+      value: -17.8629
       objectReference: {fileID: 0}
     - target: {fileID: 4572486370964370153, guid: 0f6eeed3840dff246b4fe8cf315798bc, type: 3}
       propertyPath: m_LocalPosition.z

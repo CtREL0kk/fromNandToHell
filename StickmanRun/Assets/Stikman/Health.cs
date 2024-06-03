@@ -6,7 +6,16 @@ public class Helth : MonoBehaviour, IDamageable
     [SerializeField] private Image WhiteHealthBar;
     [SerializeField] private int hp = 100;
     [SerializeField] private Camera playerCamera;
-    
+
+    private DistanceCounter distanceCounter;
+    private HighScoreManager highScoreManager;
+
+    private void Start()
+    {
+        distanceCounter = GameObject.Find("Random").GetComponent<DistanceCounter>();
+        highScoreManager = FindObjectOfType<HighScoreManager>();
+    }
+
     public void TakeDamage(int damage)
     {
         hp -= damage;
@@ -17,6 +26,8 @@ public class Helth : MonoBehaviour, IDamageable
             gameObject.GetComponent<RandKeyboard>().ActivateDeathMenu();
             playerCamera.transform.parent = null;
             gameObject.SetActive(false);
+            highScoreManager.SaveData((int)distanceCounter.distance);
+            Debug.Log("Save: " + (int)distanceCounter.distance);
         }
     }
 }

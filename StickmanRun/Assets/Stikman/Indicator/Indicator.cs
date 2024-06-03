@@ -32,10 +32,10 @@ public class EnemyIndicator : MonoBehaviour
         {
             var cappedScreenPoint = screenPoint;
 
-            if (screenPoint.x < 0) cappedScreenPoint.x = 10;
-            if (screenPoint.x > Screen.width) cappedScreenPoint.x = Screen.width - 10;
-            if (screenPoint.y < 0) cappedScreenPoint.y = 10;
-            if (screenPoint.y > Screen.height) cappedScreenPoint.y = Screen.height - 10;
+            if (screenPoint.x < 0) cappedScreenPoint.x = 30;
+            if (screenPoint.x > Screen.width) cappedScreenPoint.x = Screen.width - 30;
+            if (screenPoint.y < 0) cappedScreenPoint.y = 30;
+            if (screenPoint.y > Screen.height) cappedScreenPoint.y = Screen.height - 30;
 
             transform.position = mainCamera.ScreenToWorldPoint(cappedScreenPoint);
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);

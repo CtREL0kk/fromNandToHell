@@ -9,6 +9,8 @@ public class RandKeyboard : MonoBehaviour
     [SerializeField] private float forceJump = 200;
     [SerializeField] private int boost = 2;
     [SerializeField] private BoxCollider2D checkGround;
+    [SerializeField] private Transform checkWallPoint;
+    [SerializeField] private Transform checkWallPoint1;
 
     private AudioSource musicAudioSource;
     private AudioSource soundsAudioSource;
@@ -22,7 +24,7 @@ public class RandKeyboard : MonoBehaviour
     private PostProcessVolume postProcess;
 
     private DistanceCounter distanceCounter;
-    public float CurrentSpeed; //{ get; private set; }
+    public float CurrentSpeed;
 
     private Rigidbody2D rb;
     private Animator an;
@@ -30,9 +32,11 @@ public class RandKeyboard : MonoBehaviour
     private bool isDead;
     private bool IsGrounded =>
         Physics2D.OverlapArea(checkGround.bounds.min, checkGround.bounds.max, LayerMask.GetMask("Ground"));
+    private Vector3 startPosCheckWall;
 
     public void Start()
     {
+        startPosCheckWall = checkWallPoint.transform.localPosition;
         rb = GetComponent<Rigidbody2D>();
         an = GetComponent<Animator>();
 
@@ -61,7 +65,7 @@ public class RandKeyboard : MonoBehaviour
     private void HorizontalMove()
     {
         var distance = distanceCounter.distance;
-        CurrentSpeed = (float)(moveSpeed + distance * 100 * boost) * Time.deltaTime ;
+        CurrentSpeed = moveSpeed * Time.deltaTime ;
         transform.Translate(CurrentSpeed * Vector3.right);
     }
 
@@ -69,12 +73,14 @@ public class RandKeyboard : MonoBehaviour
     {
         Jump();
         Tackle();
+        checkWallPoint.transform.localPosition = new Vector3(checkWallPoint.transform.localPosition.x, startPosCheckWall.y, 0);
     }
 
     private void Tackle()
     {
         if (Input.GetKeyDown(KeyCode.S) && IsGrounded)
         {
+            checkWallPoint.transform.position -= new Vector3(0, 2, 0);
             soundsAudioSource.PlayOneShot(tackleSound);
             an.SetTrigger("Tackle");
         }
@@ -98,7 +104,6 @@ public class RandKeyboard : MonoBehaviour
             an.ResetTrigger("Jump");
     }
 
-    [SerializeField] private Transform checkWallPoint;
     [SerializeField] private float distanceToDeathFromPlatform = 30;
     private float? saveWallHeight;
     private void FixedUpdate()
@@ -115,9 +120,13 @@ public class RandKeyboard : MonoBehaviour
 
         var wallOrigin = checkWallPoint.transform.position;
         var wallDir = Vector2.right;
-        var wallHit = Physics2D.Raycast(wallOrigin, wallDir, moveSpeed * Time.fixedDeltaTime, LayerMask.GetMask("Ground"));
-        if (wallHit.collider != null)
+        var wallHit1 = Physics2D.Raycast(wallOrigin, wallDir, moveSpeed * Time.fixedDeltaTime, LayerMask.GetMask("Ground"));
+        var wallOrigin1 = checkWallPoint1.transform.position;
+        var wallHit2 = Physics2D.Raycast(wallOrigin1, wallDir, moveSpeed * Time.fixedDeltaTime, LayerMask.GetMask("Ground"));
+        if (wallHit1.collider != null || wallHit2.collider != null)
         {
+            Debug.Log("Detect");
+            var wallHit = wallHit1.collider == null ? wallHit2 : wallHit1;
             if (wallHit.collider.CompareTag("Obstacle"))
             {
                 HandleObstacle();
