@@ -10,6 +10,7 @@ public class PlatformManager : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float distanceToDelete = 100f;
     [SerializeField] private GameObject firstPlatformPrefab;
+    [SerializeField] private GameObject distanceTablePrefab;
 
     private float minY = 5f;
     private float maxY = 5f;
@@ -17,13 +18,20 @@ public class PlatformManager : MonoBehaviour
     private float lastEndPositionX;
     private GameObject lastPlatformPrefab;
     private float lastStartPosition;
+    private DistanceCounter distanceCounter;
+    private int distanceLastTable = 1;
 
-    void Start()
+    private void Awake()
+    {
+        distanceCounter = GameObject.Find("Random").GetComponent<DistanceCounter>();
+    }
+
+    private void Start()
     {
         //firstPlatformPrefab = Resources.Load<GameObject>("Scenes/Random/FirstPlatform");
         lastEndPositionX = player.position.x;
         SpawnFirstPlatform();
-        SpawnInitialPlatforms();
+        SpawnPlatform();
     }
 
     void Update()
@@ -31,6 +39,11 @@ public class PlatformManager : MonoBehaviour
         if (player.position.x >= lastStartPosition && player.position.x <= lastEndPositionX)
         {
             //Debug.Log("Spawn" + "last:" + lastEndPositionX);
+            if ((int)(distanceCounter.distance / 500) > distanceLastTable)
+            {
+                distanceLastTable = (int)(distanceCounter.distance / 500);
+                SpawnPlatform(distanceTablePrefab);
+            }
             SpawnPlatform();
         }
 
@@ -40,11 +53,6 @@ public class PlatformManager : MonoBehaviour
         }
     }
 
-    private void SpawnInitialPlatforms()
-    {
-        SpawnPlatform();
-    }
-    
     private void SpawnFirstPlatform()
     { 
         var firstPlatform = Instantiate(firstPlatformPrefab);
@@ -59,16 +67,20 @@ public class PlatformManager : MonoBehaviour
         activePlatforms.Add(firstPlatform);
     }
 
-    void SpawnPlatform()
+    void SpawnPlatform(GameObject takePrefab = null)
     {
         GameObject prefab;
-        do
+        if (prefab == null)
         {
-            prefab = platformPrefabs[Random.Range(0, platformPrefabs.Length)];
-        } while (prefab == lastPlatformPrefab);
-
+            do
+            {
+                prefab = platformPrefabs[Random.Range(0, platformPrefabs.Length)];
+            } while (prefab == lastPlatformPrefab);
+        }
+        else
+            prefab = takePrefab;
+        
         lastPlatformPrefab = prefab;
-
         var newPlatform = Instantiate(prefab);
 
         var currentPlatformEndTransform = GetCurrentPlatformEndTransform();
