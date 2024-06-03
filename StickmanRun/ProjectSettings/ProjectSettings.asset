@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DalzazuGames
   productName: EscapeFromSaratov
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: adbdbfe1139e62541b3f470c77316d44, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -651,8 +651,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: My project (2)
-  metroPackageVersion: 
+  metroPackageName: Myproject2
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -660,7 +660,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: My project (2)
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: EscapeFromSaratov
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
