@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Random Scene");
     }
 
+    public void PlayStory()
+    {
+        SceneManager.LoadScene("Story");
+    }
+
     public void ExitGame()
     {
         Debug.Log("Игра закрылась");
