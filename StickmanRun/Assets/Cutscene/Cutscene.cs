@@ -19,7 +19,7 @@ public class Cutscene : MonoBehaviour
     private IEnumerator WaitForLevel()
     {
        
-        yield return new WaitForSeconds(65);
+        yield return new WaitForSeconds(55);
         SceneManager.LoadScene("Start Menu");
     }
 }
