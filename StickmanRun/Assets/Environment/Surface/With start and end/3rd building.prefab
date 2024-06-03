@@ -198,6 +198,10 @@ PrefabInstance:
       value: Death (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4572486370964370153, guid: 0f6eeed3840dff246b4fe8cf315798bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572486370964370153, guid: 0f6eeed3840dff246b4fe8cf315798bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2
       objectReference: {fileID: 0}
