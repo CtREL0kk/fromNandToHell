@@ -28,7 +28,6 @@ public class PlatformManager : MonoBehaviour
 
     private void Start()
     {
-        //firstPlatformPrefab = Resources.Load<GameObject>("Scenes/Random/FirstPlatform");
         lastEndPositionX = player.position.x;
         SpawnFirstPlatform();
         SpawnPlatform();
@@ -38,13 +37,6 @@ public class PlatformManager : MonoBehaviour
     {
         if (player.position.x >= lastStartPosition && player.position.x <= lastEndPositionX)
         {
-            //Debug.Log("Spawn" + "last:" + lastEndPositionX);
-            /*if ((int)(distanceCounter.distance / 500) > distanceLastTable)
-            {
-                distanceLastTable = (int)(distanceCounter.distance / 500);
-                SpawnPlatform(distanceTablePrefab);
-            }
-            else*/
             SpawnPlatform();
         }
 
@@ -91,11 +83,11 @@ public class PlatformManager : MonoBehaviour
         var number = 0;
         while (true)
         {
-            var newNumber = Random.Range(1, 3);
+            var newNumber = Random.Range(1, 4);
             if (number == newNumber) continue;
             number = newNumber;
             startTransform = newPlatform.transform.Find($"Start{number}");
-            endTransform = newPlatform.transform.Find($"End{startTransform.name.Substring(startTransform.name.Length - 1)}");
+            endTransform = newPlatform.transform.Find($"End{number}");
             if (startTransform != null) break;
         }
 

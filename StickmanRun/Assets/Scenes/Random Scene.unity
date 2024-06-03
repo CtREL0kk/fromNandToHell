@@ -2261,14 +2261,13 @@ MonoBehaviour:
   maxYOffset: 2
   maxChangeInY: 2
   platformPrefabs:
-  - {fileID: 3154046503859518551, guid: 29db9577173ae424f9929bd242867fdf, type: 3}
   - {fileID: 6159997431260214860, guid: 9fa7904b3b9c7b0429b2484761115d63, type: 3}
+  - {fileID: 6159997431260214860, guid: a58de2d89a7ecb24a87a96326b1de95b, type: 3}
   - {fileID: 3154046503859518551, guid: c698dc71b26b37247b6a5765d4ba5cab, type: 3}
   - {fileID: 3154046503859518551, guid: 2826196c35c0cd94fb7303d959a2d419, type: 3}
   - {fileID: 3154046503859518551, guid: ddad7c3d9e189d44ba6ae3369baf9f0b, type: 3}
   - {fileID: 3154046503859518551, guid: 693941e2d7c80cc42a69dd2d9489c2c0, type: 3}
   - {fileID: 3154046503859518551, guid: 29db9577173ae424f9929bd242867fdf, type: 3}
-  - {fileID: 6159997431260214860, guid: a58de2d89a7ecb24a87a96326b1de95b, type: 3}
   - {fileID: 6159997431260214860, guid: 15eda01dbf3dfdb468e573459c2e162b, type: 3}
   - {fileID: 6159997431260214860, guid: 4ed1ad5c52f95084fa4f703f830dff23, type: 3}
   player: {fileID: 7925983223440563826}
