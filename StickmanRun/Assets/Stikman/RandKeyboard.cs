@@ -80,7 +80,7 @@ public class RandKeyboard : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S) && IsGrounded)
         {
-            checkWallPoint.transform.position -= new Vector3(0, 2, 0);
+            checkWallPoint.transform.localPosition -= new Vector3(0, 5, 0);
             soundsAudioSource.PlayOneShot(tackleSound);
             an.SetTrigger("Tackle");
         }

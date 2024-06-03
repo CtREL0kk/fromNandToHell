@@ -434,6 +434,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5466879171252504729}
     m_Modifications:
+    - target: {fileID: 2515274320733417583, guid: 019c717f2eae23b4dabe5e971dd23361, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 4740861227703342501, guid: 019c717f2eae23b4dabe5e971dd23361, type: 3}
       propertyPath: m_Name
       value: Red mini tower
@@ -444,11 +448,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5370320111866482460, guid: 019c717f2eae23b4dabe5e971dd23361, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.21399
+      value: 20.1
       objectReference: {fileID: 0}
     - target: {fileID: 5370320111866482460, guid: 019c717f2eae23b4dabe5e971dd23361, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.861378
+      value: 29.7
       objectReference: {fileID: 0}
     - target: {fileID: 5370320111866482460, guid: 019c717f2eae23b4dabe5e971dd23361, type: 3}
       propertyPath: m_LocalPosition.z
