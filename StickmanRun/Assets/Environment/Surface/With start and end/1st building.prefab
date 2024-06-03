@@ -181,9 +181,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 500374435436676870}
     m_Modifications:
+    - target: {fileID: 254109337843554077, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 544409362229047999, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 714175887143467700, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482184518833402575, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2144626609701498955, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
       propertyPath: m_Name
       value: BirdWithSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144626609701498955, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182483584440521702, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274488523295624343, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942753270185640878, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025729501018980557, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044015923576867485, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3278839100463412443, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
       propertyPath: m_Name
@@ -229,6 +269,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455370685340445668, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760165884381961239, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053523994064503312, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525696394493051597, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5827751692711136233, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6198315444061834943, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
       propertyPath: audioSource
       value: 
@@ -237,6 +297,30 @@ PrefabInstance:
       propertyPath: birdsFlySound
       value: 
       objectReference: {fileID: 8300000, guid: 226d6c9be071a48edb421eee0a3a44ba, type: 3}
+    - target: {fileID: 6267668382770347675, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611931918556880522, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732312475681884044, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747603721379997849, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779827771906557510, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282947148835436056, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9100269794040994302, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -245,6 +329,10 @@ PrefabInstance:
       propertyPath: triggerZone
       value: 
       objectReference: {fileID: 4087300625229227794}
+    - target: {fileID: 9198265360904840639, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8508216207300875536, guid: b83343930236c3648bcca7d069e03d4f, type: 3}
     m_RemovedGameObjects: []
