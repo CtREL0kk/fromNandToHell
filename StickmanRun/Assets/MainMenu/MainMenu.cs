@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("First Level");
+        SceneManager.LoadScene("Random Scene");
     }
 
     public void ExitGame()
