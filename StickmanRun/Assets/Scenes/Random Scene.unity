@@ -6185,6 +6185,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7297192426260426414, guid: 56280e71ff182f14baad5fa724fddb80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7513929937039729029, guid: 56280e71ff182f14baad5fa724fddb80, type: 3}
       propertyPath: m_Name
       value: CheckWall1
@@ -6204,6 +6208,18 @@ PrefabInstance:
     - target: {fileID: 8044911768966258505, guid: 56280e71ff182f14baad5fa724fddb80, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276574638058362078, guid: 56280e71ff182f14baad5fa724fddb80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276574638058362078, guid: 56280e71ff182f14baad5fa724fddb80, type: 3}
+      propertyPath: m_ShowToolkit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276574638058362078, guid: 56280e71ff182f14baad5fa724fddb80, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8770966847538255943, guid: 56280e71ff182f14baad5fa724fddb80, type: 3}
       propertyPath: m_LocalPosition.x
